@@ -1,0 +1,339 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'entrée_données.ui'
+#
+# Created: Fri Jan  9 17:07:40 2015
+#      by: pyside-uic 0.2.15 running on PySide 1.2.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PySide import QtCore, QtGui
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1600, 900)
+        MainWindow.setStyleSheet("#groupBox_3 {\n"
+"\n"
+"    background : #d7eceb;\n"
+"    border-radius : 10px;\n"
+"\n"
+"}\n"
+"\n"
+"#label_3,#label_7 {\n"
+"\n"
+"    padding : 0px 3px;\n"
+"    color : white;\n"
+"    font-size : 16pt;\n"
+"    border : 1px solid #a4c7c0;\n"
+"    border-bottom-style : none;\n"
+"\n"
+"}\n"
+"\n"
+"#label, #label_2 ,#label_8,#label_10,#label_9,#label_11,#label_12,#label_13,#label_14,#label_15,#label_16,#label_17,#label_18,#label_19{\n"
+"\n"
+"    font-size : 15px;\n"
+"    border : 1px solid #a4c7c0;\n"
+"    padding : 0px 3px;\n"
+"\n"
+"}\n"
+"\n"
+"#label_4,#label_5,#label_6 {\n"
+"\n"
+"    font-style : italic;\n"
+"    color : grey;\n"
+"    background : none\n"
+"\n"
+"}\n"
+"\n"
+"#frame_5,#frame_6,#frame_7 {\n"
+"\n"
+"    background : black;\n"
+"    border-image: url(res/arrow_1.png) 0 0 0 0 stretch stretch;\n"
+"\n"
+"}\n"
+"\n"
+" QListWidget {\n"
+"    border : none;\n"
+"    background : #00264a;\n"
+"    border-bottom-right-radius : 10px;\n"
+" }\n"
+"\n"
+"#frame, #frame_2, #frame_3, #frame_4 {\n"
+"\n"
+"    background : #d7eceb;\n"
+"\n"
+"}\n"
+"\n"
+"#centralwidget {\n"
+"\n"
+"    background-color : #ccc;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QWidget {\n"
+"\n"
+"    font-size : 20px;\n"
+"\n"
+"}\n"
+"\n"
+".QLabel{\n"
+"\n"
+"    font-weight : 400;\n"
+"    border : none;\n"
+"    font-size : 16pt;\n"
+"    background-color : #0098cc;\n"
+"    \n"
+"}\n"
+"\n"
+".QPushButton{\n"
+"    \n"
+"    font : 13pt \"Consolas\";\n"
+"    border-radius : 0px;\n"
+"    padding : 15px;\n"
+"    color : #00003B;    \n"
+"}\n"
+"\n"
+".QToolButton{\n"
+"\n"
+"    background-color : #fecc26;\n"
+"    border : 1px solid black;\n"
+"    padding : 5px;    \n"
+"\n"
+"}\n"
+"\n"
+"\n"
+".QGroupBox{\n"
+"\n"
+"    color : white;\n"
+"    font-weight : 600;\n"
+"    border : 0px;\n"
+"    background-color : #00264a;\n"
+"\n"
+"}\n"
+"\n"
+".QLineEdit, .QSpinBox{\n"
+"\n"
+"    color : #000035;\n"
+"    background-color : #b1b3b4;\n"
+"\n"
+"}\n"
+"")
+        self.centralwidget = QtGui.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.frame = QtGui.QFrame(self.centralwidget)
+        self.frame.setGeometry(QtCore.QRect(-20, 190, 1621, 16))
+        self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtGui.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.frame_2 = QtGui.QFrame(self.centralwidget)
+        self.frame_2.setGeometry(QtCore.QRect(400, 190, 20, 711))
+        self.frame_2.setFrameShape(QtGui.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtGui.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.frame_3 = QtGui.QFrame(self.centralwidget)
+        self.frame_3.setGeometry(QtCore.QRect(1200, 190, 20, 711))
+        self.frame_3.setFrameShape(QtGui.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtGui.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.frame_4 = QtGui.QFrame(self.centralwidget)
+        self.frame_4.setGeometry(QtCore.QRect(800, 190, 20, 711))
+        self.frame_4.setFrameShape(QtGui.QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QtGui.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.listWidget_3 = QtGui.QListWidget(self.centralwidget)
+        self.listWidget_3.setGeometry(QtCore.QRect(480, 250, 256, 441))
+        self.listWidget_3.setStyleSheet("")
+        self.listWidget_3.setObjectName("listWidget_3")
+        self.listWidget_4 = QtGui.QListWidget(self.centralwidget)
+        self.listWidget_4.setGeometry(QtCore.QRect(1280, 250, 256, 471))
+        self.listWidget_4.setStyleSheet("")
+        self.listWidget_4.setObjectName("listWidget_4")
+        self.label_4 = QtGui.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(0, 202, 160, 30))
+        self.label_4.setObjectName("label_4")
+        self.label_5 = QtGui.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(0, 0, 160, 30))
+        self.label_5.setObjectName("label_5")
+        self.label_6 = QtGui.QLabel(self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(820, 202, 160, 30))
+        self.label_6.setObjectName("label_6")
+        self.label_7 = QtGui.QLabel(self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(1333, 219, 150, 31))
+        self.label_7.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_7.setObjectName("label_7")
+        self.label_3 = QtGui.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(533, 219, 150, 31))
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.b_charger_2 = QtGui.QToolButton(self.centralwidget)
+        self.b_charger_2.setGeometry(QtCore.QRect(365, 420, 90, 50))
+        self.b_charger_2.setObjectName("b_charger_2")
+        self.b_charger_3 = QtGui.QToolButton(self.centralwidget)
+        self.b_charger_3.setGeometry(QtCore.QRect(765, 420, 90, 50))
+        self.b_charger_3.setObjectName("b_charger_3")
+        self.b_charger_4 = QtGui.QToolButton(self.centralwidget)
+        self.b_charger_4.setGeometry(QtCore.QRect(1165, 420, 90, 50))
+        self.b_charger_4.setObjectName("b_charger_4")
+        self.groupBox_3 = QtGui.QGroupBox(self.centralwidget)
+        self.groupBox_3.setGeometry(QtCore.QRect(274, 30, 1051, 131))
+        self.groupBox_3.setTitle("")
+        self.groupBox_3.setObjectName("groupBox_3")
+        self.groupBox = QtGui.QGroupBox(self.groupBox_3)
+        self.groupBox.setGeometry(QtCore.QRect(50, 20, 581, 91))
+        self.groupBox.setStyleSheet("")
+        self.groupBox.setObjectName("groupBox")
+        self.label = QtGui.QLabel(self.groupBox)
+        self.label.setGeometry(QtCore.QRect(40, 30, 131, 20))
+        self.label.setObjectName("label")
+        self.label_2 = QtGui.QLabel(self.groupBox)
+        self.label_2.setGeometry(QtCore.QRect(40, 60, 131, 20))
+        self.label_2.setObjectName("label_2")
+        self.spinBox = QtGui.QSpinBox(self.groupBox)
+        self.spinBox.setGeometry(QtCore.QRect(180, 30, 85, 20))
+        self.spinBox.setMinimum(1)
+        self.spinBox.setMaximum(500001)
+        self.spinBox.setSingleStep(1000)
+        self.spinBox.setProperty("value", 100000)
+        self.spinBox.setObjectName("spinBox")
+        self.spinBox_2 = QtGui.QSpinBox(self.groupBox)
+        self.spinBox_2.setGeometry(QtCore.QRect(180, 60, 85, 20))
+        self.spinBox_2.setMaximum(100)
+        self.spinBox_2.setSingleStep(1)
+        self.spinBox_2.setObjectName("spinBox_2")
+        self.label_8 = QtGui.QLabel(self.groupBox)
+        self.label_8.setGeometry(QtCore.QRect(290, 40, 171, 20))
+        self.label_8.setObjectName("label_8")
+        self.spinBox_3 = QtGui.QSpinBox(self.groupBox)
+        self.spinBox_3.setGeometry(QtCore.QRect(470, 40, 85, 20))
+        self.spinBox_3.setMinimum(1)
+        self.spinBox_3.setMaximum(10)
+        self.spinBox_3.setSingleStep(1)
+        self.spinBox_3.setObjectName("spinBox_3")
+        self.groupBox_2 = QtGui.QGroupBox(self.groupBox_3)
+        self.groupBox_2.setGeometry(QtCore.QRect(690, 20, 311, 91))
+        self.groupBox_2.setObjectName("groupBox_2")
+        self.horizontalLayoutWidget = QtGui.QWidget(self.groupBox_2)
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 30, 291, 51))
+        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
+        self.horizontalLayout = QtGui.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.b_charger = QtGui.QToolButton(self.horizontalLayoutWidget)
+        self.b_charger.setObjectName("b_charger")
+        self.horizontalLayout.addWidget(self.b_charger)
+        self.b_sauver = QtGui.QToolButton(self.horizontalLayoutWidget)
+        self.b_sauver.setObjectName("b_sauver")
+        self.horizontalLayout.addWidget(self.b_sauver)
+        self.groupBox_4 = QtGui.QGroupBox(self.centralwidget)
+        self.groupBox_4.setGeometry(QtCore.QRect(60, 310, 256, 300))
+        self.groupBox_4.setObjectName("groupBox_4")
+        self.label_10 = QtGui.QLabel(self.groupBox_4)
+        self.label_10.setGeometry(QtCore.QRect(20, 40, 131, 20))
+        self.label_10.setObjectName("label_10")
+        self.label_9 = QtGui.QLabel(self.groupBox_4)
+        self.label_9.setGeometry(QtCore.QRect(20, 150, 131, 20))
+        self.label_9.setObjectName("label_9")
+        self.lineEdit = QtGui.QLineEdit(self.groupBox_4)
+        self.lineEdit.setGeometry(QtCore.QRect(100, 70, 113, 20))
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtGui.QLineEdit(self.groupBox_4)
+        self.lineEdit_2.setGeometry(QtCore.QRect(100, 180, 113, 20))
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.groupBox_5 = QtGui.QGroupBox(self.centralwidget)
+        self.groupBox_5.setGeometry(QtCore.QRect(890, 310, 250, 471))
+        self.groupBox_5.setObjectName("groupBox_5")
+        self.label_11 = QtGui.QLabel(self.groupBox_5)
+        self.label_11.setGeometry(QtCore.QRect(20, 40, 131, 20))
+        self.label_11.setObjectName("label_11")
+        self.label_12 = QtGui.QLabel(self.groupBox_5)
+        self.label_12.setGeometry(QtCore.QRect(20, 150, 131, 20))
+        self.label_12.setObjectName("label_12")
+        self.lineEdit_3 = QtGui.QLineEdit(self.groupBox_5)
+        self.lineEdit_3.setGeometry(QtCore.QRect(100, 70, 113, 20))
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.lineEdit_4 = QtGui.QLineEdit(self.groupBox_5)
+        self.lineEdit_4.setGeometry(QtCore.QRect(100, 180, 113, 20))
+        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.lineEdit_5 = QtGui.QLineEdit(self.groupBox_5)
+        self.lineEdit_5.setGeometry(QtCore.QRect(100, 290, 113, 20))
+        self.lineEdit_5.setObjectName("lineEdit_5")
+        self.label_13 = QtGui.QLabel(self.groupBox_5)
+        self.label_13.setGeometry(QtCore.QRect(20, 260, 131, 20))
+        self.label_13.setObjectName("label_13")
+        self.lineEdit_6 = QtGui.QLineEdit(self.groupBox_5)
+        self.lineEdit_6.setGeometry(QtCore.QRect(100, 320, 113, 20))
+        self.lineEdit_6.setObjectName("lineEdit_6")
+        self.lineEdit_7 = QtGui.QLineEdit(self.groupBox_5)
+        self.lineEdit_7.setGeometry(QtCore.QRect(100, 380, 113, 20))
+        self.lineEdit_7.setObjectName("lineEdit_7")
+        self.lineEdit_8 = QtGui.QLineEdit(self.groupBox_5)
+        self.lineEdit_8.setGeometry(QtCore.QRect(100, 350, 113, 20))
+        self.lineEdit_8.setObjectName("lineEdit_8")
+        self.lineEdit_9 = QtGui.QLineEdit(self.groupBox_5)
+        self.lineEdit_9.setGeometry(QtCore.QRect(100, 410, 113, 20))
+        self.lineEdit_9.setObjectName("lineEdit_9")
+        self.label_14 = QtGui.QLabel(self.groupBox_5)
+        self.label_14.setGeometry(QtCore.QRect(40, 290, 51, 20))
+        self.label_14.setObjectName("label_14")
+        self.label_15 = QtGui.QLabel(self.groupBox_5)
+        self.label_15.setGeometry(QtCore.QRect(40, 320, 51, 20))
+        self.label_15.setObjectName("label_15")
+        self.label_16 = QtGui.QLabel(self.groupBox_5)
+        self.label_16.setGeometry(QtCore.QRect(40, 350, 51, 20))
+        self.label_16.setObjectName("label_16")
+        self.label_17 = QtGui.QLabel(self.groupBox_5)
+        self.label_17.setGeometry(QtCore.QRect(40, 380, 51, 20))
+        self.label_17.setObjectName("label_17")
+        self.label_18 = QtGui.QLabel(self.groupBox_5)
+        self.label_18.setGeometry(QtCore.QRect(40, 410, 51, 20))
+        self.label_18.setObjectName("label_18")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtGui.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1600, 34))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtGui.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionCharger = QtGui.QAction(MainWindow)
+        self.actionCharger.setObjectName("actionCharger")
+        self.actionSauver = QtGui.QAction(MainWindow)
+        self.actionSauver.setObjectName("actionSauver")
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "MainWindow", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_4.setText(QtGui.QApplication.translate("MainWindow", " Partie produits", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_5.setText(QtGui.QApplication.translate("MainWindow", " Partie générale", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_6.setText(QtGui.QApplication.translate("MainWindow", " Partie billes", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_7.setText(QtGui.QApplication.translate("MainWindow", "145 billes", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_3.setText(QtGui.QApplication.translate("MainWindow", "1655 Produits", None, QtGui.QApplication.UnicodeUTF8))
+        self.b_charger_2.setText(QtGui.QApplication.translate("MainWindow", "===>", None, QtGui.QApplication.UnicodeUTF8))
+        self.b_charger_3.setText(QtGui.QApplication.translate("MainWindow", "===>", None, QtGui.QApplication.UnicodeUTF8))
+        self.b_charger_4.setText(QtGui.QApplication.translate("MainWindow", "===>", None, QtGui.QApplication.UnicodeUTF8))
+        self.groupBox.setTitle(QtGui.QApplication.translate("MainWindow", "Paramètres généraux", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setText(QtGui.QApplication.translate("MainWindow", "Nombre de pas :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setText(QtGui.QApplication.translate("MainWindow", "Taille de l\'arène :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_8.setText(QtGui.QApplication.translate("MainWindow", "Calculer une image sur :", None, QtGui.QApplication.UnicodeUTF8))
+        self.groupBox_2.setTitle(QtGui.QApplication.translate("MainWindow", "Actions", None, QtGui.QApplication.UnicodeUTF8))
+        self.b_charger.setText(QtGui.QApplication.translate("MainWindow", "Charger", None, QtGui.QApplication.UnicodeUTF8))
+        self.b_sauver.setText(QtGui.QApplication.translate("MainWindow", "Sauver", None, QtGui.QApplication.UnicodeUTF8))
+        self.groupBox_4.setTitle(QtGui.QApplication.translate("MainWindow", "Produit A", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_10.setText(QtGui.QApplication.translate("MainWindow", "Diffusivité :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_9.setText(QtGui.QApplication.translate("MainWindow", "Decay :", None, QtGui.QApplication.UnicodeUTF8))
+        self.groupBox_5.setTitle(QtGui.QApplication.translate("MainWindow", "Bille 1", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_11.setText(QtGui.QApplication.translate("MainWindow", "Taille :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_12.setText(QtGui.QApplication.translate("MainWindow", "Equation :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_13.setText(QtGui.QApplication.translate("MainWindow", "Concentrations :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_14.setText(QtGui.QApplication.translate("MainWindow", "A ->", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_15.setText(QtGui.QApplication.translate("MainWindow", "B ->", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_16.setText(QtGui.QApplication.translate("MainWindow", "C ->", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_17.setText(QtGui.QApplication.translate("MainWindow", "D ->", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_18.setText(QtGui.QApplication.translate("MainWindow", "E ->", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionCharger.setText(QtGui.QApplication.translate("MainWindow", "Charger", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSauver.setText(QtGui.QApplication.translate("MainWindow", "Sauver", None, QtGui.QApplication.UnicodeUTF8))
+
