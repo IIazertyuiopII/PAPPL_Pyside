@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'entrée_données.ui'
 #
-# Created: Fri Jan  9 17:07:40 2015
+# Created: Fri Jan  9 17:42:06 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -43,13 +43,6 @@ class Ui_MainWindow(object):
 "    font-style : italic;\n"
 "    color : grey;\n"
 "    background : none\n"
-"\n"
-"}\n"
-"\n"
-"#frame_5,#frame_6,#frame_7 {\n"
-"\n"
-"    background : black;\n"
-"    border-image: url(res/arrow_1.png) 0 0 0 0 stretch stretch;\n"
 "\n"
 "}\n"
 "\n"
@@ -142,14 +135,6 @@ class Ui_MainWindow(object):
         self.frame_4.setFrameShape(QtGui.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtGui.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
-        self.listWidget_3 = QtGui.QListWidget(self.centralwidget)
-        self.listWidget_3.setGeometry(QtCore.QRect(480, 250, 256, 441))
-        self.listWidget_3.setStyleSheet("")
-        self.listWidget_3.setObjectName("listWidget_3")
-        self.listWidget_4 = QtGui.QListWidget(self.centralwidget)
-        self.listWidget_4.setGeometry(QtCore.QRect(1280, 250, 256, 471))
-        self.listWidget_4.setStyleSheet("")
-        self.listWidget_4.setObjectName("listWidget_4")
         self.label_4 = QtGui.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(0, 202, 160, 30))
         self.label_4.setObjectName("label_4")
@@ -289,6 +274,26 @@ class Ui_MainWindow(object):
         self.label_18 = QtGui.QLabel(self.groupBox_5)
         self.label_18.setGeometry(QtCore.QRect(40, 410, 51, 20))
         self.label_18.setObjectName("label_18")
+        self.groupBox_6 = QtGui.QGroupBox(self.centralwidget)
+        self.groupBox_6.setGeometry(QtCore.QRect(480, 250, 256, 441))
+        self.groupBox_6.setTitle("")
+        self.groupBox_6.setObjectName("groupBox_6")
+        self.verticalLayoutWidget = QtGui.QWidget(self.groupBox_6)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(40, 30, 181, 391))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout_2 = QtGui.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.groupBox_7 = QtGui.QGroupBox(self.centralwidget)
+        self.groupBox_7.setGeometry(QtCore.QRect(1280, 250, 256, 441))
+        self.groupBox_7.setTitle("")
+        self.groupBox_7.setObjectName("groupBox_7")
+        self.verticalLayoutWidget_4 = QtGui.QWidget(self.groupBox_7)
+        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(40, 30, 181, 391))
+        self.verticalLayoutWidget_4.setObjectName("verticalLayoutWidget_4")
+        self.verticalLayout_5 = QtGui.QVBoxLayout(self.verticalLayoutWidget_4)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1600, 34))

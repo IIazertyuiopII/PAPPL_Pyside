@@ -14,8 +14,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
         	
-        #self.grpbox = ok(self)
-        #self.grpbox.move(1000,500)
+        self.grpbox = ok(self)
+        self.grpbox2 = ok(self)
+        self.grpbox3 = ok(self)
+        self.verticalLayout_2.addWidget(self.grpbox)
+        self.verticalLayout_2.addWidget(self.grpbox2)
+        self.verticalLayout_2.addWidget(self.grpbox3)
 
         #self.lineEdit.textEdited.connect(self.textchange)
         #event bindings
@@ -46,10 +50,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
   		print(self.lineEdit.text())       
      
 
-#class ok(QGroupBox, Ui_GroupBox):
-#	def __init__(self,parent):
-#		super(ok, self).__init__(parent)
-#		self.setupUi(self)
+class ok(QGroupBox, Ui_GroupBox):
+	def __init__(self,parent):
+		super(ok, self).__init__(parent)
+		self.setupUi(self)
 
        
 app = QApplication(sys.argv)
