@@ -29,6 +29,17 @@
 	
 }
 
+*[class=&quot;top&quot;]{
+
+	font : 13pt &quot;Consolas&quot;;
+	border-radius : 0px;
+	background-color : #c7eef9;
+	padding : 10px;
+    border-bottom : 1px solid #ccc;
+	color : #00003B;	
+	border-right : 5px solid grey;
+
+}
 
 .QPushButton{
 	
@@ -95,8 +106,8 @@ color : red;
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>260</y>
+      <x>270</x>
+      <y>430</y>
       <width>331</width>
       <height>141</height>
      </rect>
@@ -182,13 +193,16 @@ color : red;
      <property name="topMargin">
       <number>0</number>
      </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <property name="spacing">
         <number>0</number>
        </property>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="first">
          <property name="minimumSize">
           <size>
            <width>300</width>
@@ -197,6 +211,9 @@ color : red;
          </property>
          <property name="text">
           <string>je ne suis pas un bouton</string>
+         </property>
+         <property name="class" stdset="0">
+          <string>top</string>
          </property>
         </widget>
        </item>
@@ -223,6 +240,9 @@ color : red;
        <property name="text">
         <string>PushButton</string>
        </property>
+       <property name="class" stdset="0">
+        <string>top</string>
+       </property>
       </widget>
      </item>
      <item>
@@ -230,10 +250,13 @@ color : red;
        <property name="text">
         <string>PushButton</string>
        </property>
+       <property name="class" stdset="0">
+        <string>top</string>
+       </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="first_2">
        <property name="text">
         <string>PushButton</string>
        </property>

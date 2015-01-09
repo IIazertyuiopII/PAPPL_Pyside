@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'fun.ui'
 #
-# Created: Mon Jan  5 12:36:19 2015
+# Created: Fri Jan  9 14:53:56 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -28,6 +28,17 @@ class Ui_MainWindow(object):
 "    \n"
 "}\n"
 "\n"
+"*[class=\"top\"]{\n"
+"\n"
+"    font : 13pt \"Consolas\";\n"
+"    border-radius : 0px;\n"
+"    background-color : #c7eef9;\n"
+"    padding : 10px;\n"
+"    border-bottom : 1px solid #ccc;\n"
+"    color : #00003B;    \n"
+"    border-right : 5px solid grey;\n"
+"\n"
+"}\n"
 "\n"
 ".QPushButton{\n"
 "    \n"
@@ -78,7 +89,7 @@ class Ui_MainWindow(object):
         self.toolButton.setObjectName("toolButton")
         self.horizontalLayout.addWidget(self.toolButton)
         self.groupBox = QtGui.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(540, 260, 331, 141))
+        self.groupBox.setGeometry(QtCore.QRect(270, 430, 331, 141))
         self.groupBox.setStyleSheet("")
         self.groupBox.setObjectName("groupBox")
         self.label = QtGui.QLabel(self.groupBox)
@@ -99,16 +110,16 @@ class Ui_MainWindow(object):
         self.verticalLayout = QtGui.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setSizeConstraint(QtGui.QLayout.SetDefaultConstraint)
-        self.verticalLayout.setContentsMargins(0, 0, -1, -1)
+        self.verticalLayout.setContentsMargins(0, 0, 0, -1)
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.pushButton_2 = QtGui.QPushButton(self.verticalLayoutWidget)
-        self.pushButton_2.setMinimumSize(QtCore.QSize(300, 0))
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout_2.addWidget(self.pushButton_2)
+        self.first = QtGui.QPushButton(self.verticalLayoutWidget)
+        self.first.setMinimumSize(QtCore.QSize(300, 0))
+        self.first.setObjectName("first")
+        self.horizontalLayout_2.addWidget(self.first)
         self.pushButton_5 = QtGui.QPushButton(self.verticalLayoutWidget)
         self.pushButton_5.setEnabled(True)
         self.pushButton_5.setMinimumSize(QtCore.QSize(50, 0))
@@ -121,9 +132,9 @@ class Ui_MainWindow(object):
         self.pushButton_3 = QtGui.QPushButton(self.verticalLayoutWidget)
         self.pushButton_3.setObjectName("pushButton_3")
         self.verticalLayout.addWidget(self.pushButton_3)
-        self.pushButton = QtGui.QPushButton(self.verticalLayoutWidget)
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout.addWidget(self.pushButton)
+        self.first_2 = QtGui.QPushButton(self.verticalLayoutWidget)
+        self.first_2.setObjectName("first_2")
+        self.verticalLayout.addWidget(self.first_2)
         spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -155,11 +166,14 @@ class Ui_MainWindow(object):
         self.label_2.setText(QtGui.QApplication.translate("MainWindow", "Nombre de bras", None, QtGui.QApplication.UnicodeUTF8))
         self.lineEdit.setText(QtGui.QApplication.translate("MainWindow", "betete", None, QtGui.QApplication.UnicodeUTF8))
         self.lineEdit_2.setText(QtGui.QApplication.translate("MainWindow", "bhoufhghg", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushButton_2.setText(QtGui.QApplication.translate("MainWindow", "je ne suis pas un bouton", None, QtGui.QApplication.UnicodeUTF8))
+        self.first.setText(QtGui.QApplication.translate("MainWindow", "je ne suis pas un bouton", None, QtGui.QApplication.UnicodeUTF8))
+        self.first.setProperty("class", QtGui.QApplication.translate("MainWindow", "top", None, QtGui.QApplication.UnicodeUTF8))
         self.pushButton_5.setText(QtGui.QApplication.translate("MainWindow", "1", None, QtGui.QApplication.UnicodeUTF8))
         self.pushButton_4.setText(QtGui.QApplication.translate("MainWindow", "PushButton", None, QtGui.QApplication.UnicodeUTF8))
+        self.pushButton_4.setProperty("class", QtGui.QApplication.translate("MainWindow", "top", None, QtGui.QApplication.UnicodeUTF8))
         self.pushButton_3.setText(QtGui.QApplication.translate("MainWindow", "PushButton", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushButton.setText(QtGui.QApplication.translate("MainWindow", "PushButton", None, QtGui.QApplication.UnicodeUTF8))
+        self.pushButton_3.setProperty("class", QtGui.QApplication.translate("MainWindow", "top", None, QtGui.QApplication.UnicodeUTF8))
+        self.first_2.setText(QtGui.QApplication.translate("MainWindow", "PushButton", None, QtGui.QApplication.UnicodeUTF8))
         self.menuHghghghgh.setTitle(QtGui.QApplication.translate("MainWindow", "hghghghgh", None, QtGui.QApplication.UnicodeUTF8))
         self.actionSave.setText(QtGui.QApplication.translate("MainWindow", "Save", None, QtGui.QApplication.UnicodeUTF8))
         self.actionSave.setToolTip(QtGui.QApplication.translate("MainWindow", "bite", None, QtGui.QApplication.UnicodeUTF8))

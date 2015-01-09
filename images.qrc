@@ -1,6 +1,9 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
 <qresource>
+
 <file alias="bite.png">res/bite.png</file>
+<file alias="border_1.png">res/bite.png</file>
+
 </qresource>
 </RCC>
