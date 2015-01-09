@@ -1,5 +1,7 @@
 import sys
- 
+sys.path.append(".")
+import beads
+
 import PySide
 from PySide.QtGui import *
 from PySide.QtCore import *
@@ -19,10 +21,26 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #event bindings
 
   def save(self):
-        print ("saved")
+    with open(string,rwb) as dump:
+      if os.path.isfile(string):
+        if pickle.load(string).name != conf.name:
+          error = "fichier deja existant, ecraser ?"
+          return
+      pickle.dump(conf, dump)
 
   def load(self):
-        print ("loaded")
+    if 'conf' in locals():
+      c1 = copy.deepcopy(conf)
+    try:
+      conf=pickle.load(string)
+    except (pickle.UnpicklingError,ValueError) as err :
+      if 'c1' in locals():
+        conf = c1
+      error = err
+    if type(conf) != Configuration:
+      err = "Fichier incompatible"
+    del conf
+
   def textchange(self):
   		print("textchanged")
   		print(self.lineEdit.text())       
