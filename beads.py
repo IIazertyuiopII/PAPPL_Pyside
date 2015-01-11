@@ -9,56 +9,40 @@ class Produit:
 		self.diffusivity = diffu
 		self.decay = deay
 		id += 1
+	def __str__(self):
+		return "Produit " + str(self.num) + " Df : " + str(diffusivity) + "Dc : " + str(decay)
 
 class Bille:
+	id = 0 
 	def __init__(self,equation,size,conc):
 		self.eq = equation
 		self.size = size
 		self.conc = conc
+		self.num = id
+		id += 1
 	def parseur(self):
 		pass
 	def getEquation(self):
 		pass
 	def getSize(self):
 		pass
+	def __str__(self):
+		return "Bille " + str(self.num) + " Size : " + str(self.size) + "\nEq : " + self.eq + "\nConc : " + str(self.conc)
 
 
 class Option:
-	def __init__(self,npas,size):
+	def __init__(self,npas,size,eons):
 		self.nombrePas = npas
 		self.sizeArena = size
+		self.OneEveryN = oens
 
 
 class Configuration:
 	def __init__(self,name):
 		self.name = name
-		self.opt = Option(10000, 50)
+		self.opt = Option(10000, 50,10)
 		self.billes = []
 		self.produits = []
-
-
-def loadConf(string):
-	if 'conf' in locals():
-		c1 = copy.deepcopy(conf)
-	try:
-		conf=pickle.load(string)
-	except (pickle.UnpicklingError,ValueError) as err :
-		if 'c1' in locals():
-			conf = c1
-		error = err
-	if type(conf) != Configuration:
-		err = "Fichier incompatible"
-	del conf
-
-
-
-def saveConf(string):
-	with open(string,rwb) as dump:
-		if os.path.isfile(string):
-			if pickle.load(string).name != conf.name:
-				error = "fichier deja existant, ecraser ?"
-				return
-		pickle.dump(conf, dump)
 
 
 
