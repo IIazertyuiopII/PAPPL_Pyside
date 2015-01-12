@@ -117,6 +117,23 @@ class ok(QGroupBox, Ui_GroupBox):
   def c(self):
     self.modif.emit(int(self.num))
 
+
+class bil(QGroupBox, Ui_GroupBox):
+
+  deriv = Signal(int)
+
+  def __init__(self,parent,params):
+    super(ok, self).__init__(parent)
+    self.setupUi(self)
+    self.num = params[0]
+    self.taille.setText(params[1])
+    self.eq.setText(params[2])
+    self.conc.setText(params[3])
+    self.toolButton.clicked.connect(self.c)
+
+  def c(self):
+    self.deriv.emit(int(self.num))
+
 app = QApplication(sys.argv)
 frame = MainWindow()
 frame.show()
