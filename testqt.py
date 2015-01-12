@@ -79,13 +79,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
       for i in self.conf.produits :
         if i.num == k:
-        self.lineEdit.setText(i.diffusivity)
-        self.lineEdit_2.setText(i.decay)
+          self.lineEdit.setText(i.diffusivity)
+          self.lineEdit_2.setText(i.decay)
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
     self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
-    nb = len(conf.billes)-1
+    nb = len(self.conf.billes)-1
 
     self.verticalLayout_5.insertWidget(0,ok(self,params=self.conf.billes[nb].getDescription()))
     self.label_7.setText(str(nb+1) + " billes")
