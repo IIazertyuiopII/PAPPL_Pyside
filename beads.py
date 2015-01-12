@@ -34,7 +34,7 @@ class Option:
 	def __init__(self,npas,size,eons):
 		self.nombrePas = npas
 		self.sizeArena = size
-		self.OneEveryN = oens
+		self.OneEveryN = eons
 
 
 class Configuration:

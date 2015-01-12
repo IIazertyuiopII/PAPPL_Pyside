@@ -23,16 +23,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.verticalLayout_2.addWidget(self.grpbox2)
         self.verticalLayout_2.addWidget(self.grpbox3)
 
-        Configuration conf("default")
+        conf = beads.Configuration("default")
 
         #self.lineEdit.textEdited.connect(self.textchange)
         #event bindings
 
         self.b_charger_2.clicked.connect(self.addProduct)
         self.b_charger_4.clicked.connect(self.addBille)
-        self.spinBox.valueChanger.connect(self.majOptions)
-        self.spinBox_2.valueChanger.connect(self.majOptions)
-        self.spinBox_3.valueChanger.connect(self.majOptions)
+        self.spinBox.valueChanged.connect(self.majOptions)
+        self.spinBox_2.valueChanged.connect(self.majOptions)
+        self.spinBox_3.valueChanged.connect(self.majOptions)
 
         self.b_charger.clicked.connect(self.load)
         self.b_sauver.clicked.connect(self.save)
@@ -84,7 +84,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       conf.produits.append(Product(self.lineEdit.text(),self.lineEdit_2.text()))
       np = len(conf.produits)-1
       self.label_3.setText(str(np) + " Produits")
-      self.verticalLayout_2.add(conf.produits.[np])
+      self.verticalLayout_2.add(conf.produits[np])
       
 
   def addBille(self):
