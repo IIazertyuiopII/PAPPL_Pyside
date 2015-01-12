@@ -93,6 +93,9 @@ class ok(QGroupBox, Ui_GroupBox):
 	def __init__(self,parent,params):
 		super(ok, self).__init__(parent)
 		self.setupUi(self)
+    self.label.setText(params[0])
+    self.label_3.setText(params[1])
+    self.label_2.setText(params[2])
 
        
 app = QApplication(sys.argv)
