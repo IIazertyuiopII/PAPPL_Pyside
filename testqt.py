@@ -41,7 +41,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def save(self):
 
-    #string = QFileDialog()
+    string, _  = QFileDialog().getOpenFileName(self, 'Sauvegarder fichier', '~')
 
     with open(string,rwb) as dump:
       if os.path.isfile(string):
