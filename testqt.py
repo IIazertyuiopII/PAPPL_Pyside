@@ -79,8 +79,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
       for i in self.conf.produits :
         if i.num == k:
-          self.lineEdit.setText(i.diffusivity)
-          self.lineEdit_2.setText(i.decay)
+         self.lineEdit.setText(i.diffusivity)
+         self.lineEdit_2.setText(i.decay)
+         self.verticalLayout_2.takeAt(k)
+         del i
+         break
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
@@ -90,7 +93,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     self.verticalLayout_5.insertWidget(0,ok(self,params=self.conf.billes[nb].getDescription()))
     self.label_7.setText(str(nb+1) + " billes")
 
-     
+def mapAlphabet(k):
+  c = {0:'a',1:'b',2:'c',3:'d',4:'e',5:'f'}
+  if c.contains(k):
+    return c[k]
+  else:
+    return 'Q'
+
 
 class ok(QGroupBox, Ui_GroupBox):
 
@@ -99,7 +108,7 @@ class ok(QGroupBox, Ui_GroupBox):
   def __init__(self,parent,params):
     super(ok, self).__init__(parent)
     self.setupUi(self)
-    self.label.setText(params[0])
+    self.label.setText(mapAlphabet(params[0]))
     self.label_3.setText(params[1])
     self.label_2.setText(params[2])
     self.toolButton.clicked.connect(self.c)
