@@ -14,17 +14,23 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#groupBox_3 {
+   <string notr="true">#groupBox_3,#groupBox_8,#groupBox_9 {
 
-	background : #d7eceb;
-	border-radius : 10px;
+	background : #26c2f9;
+
+}
+
+#groupBox_6,#groupBox_7 {
+
+	border : 10px solid #26c2f9;
+	border-top-size : 20px;
+	border-bottom-size : 20px;	
 
 }
 
 #label_3,#label_7 {
 
 	padding : 0px 3px;
-	color : white;
 	font-size : 16pt;
 	border : 1px solid #a4c7c0;
 	border-bottom-style : none;
@@ -55,13 +61,13 @@
 
 #frame, #frame_2, #frame_3, #frame_4 {
 
-	background : #d7eceb;
+	background : #505050;
 
 }
 
-#centralwidget {
+#centralwidget,QMainWindow {
 
-	background-color : #ccc;
+	background-color : #fff;
 
 }
 
@@ -77,7 +83,7 @@ QWidget {
 	font-weight : 400;
 	border : none;
 	font-size : 16pt;
-	background-color : #0098cc;
+	background-color : #f0fff0;
 	
 }
 
@@ -92,18 +98,26 @@ QWidget {
 .QToolButton{
 
 	background-color : #fecc26;
-	border : 1px solid black;
 	padding : 5px;	
 
 }
 
+.QToolButton:pressed{
+
+ 	border-style :  outset;
+	border-width : 2px;
+	border-color : black;
+	border-left-color:#ccc;
+	border-top-color:#ccc;
+
+}
 
 .QGroupBox{
 
-	color : white;
+	color : 0040f4;
 	font-weight : 600;
     border : 0px;
-    background-color : #00264a;
+    background-color : #c7eef9;
 
 }
 
@@ -151,7 +165,7 @@ QWidget {
    <widget class="QFrame" name="frame_3">
     <property name="geometry">
      <rect>
-      <x>1200</x>
+      <x>1230</x>
       <y>190</y>
       <width>20</width>
       <height>711</height>
@@ -163,11 +177,13 @@ QWidget {
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <zorder>b_charger_4</zorder>
+    <zorder>b_charger_4</zorder>
    </widget>
    <widget class="QFrame" name="frame_4">
     <property name="geometry">
      <rect>
-      <x>800</x>
+      <x>820</x>
       <y>190</y>
       <width>20</width>
       <height>711</height>
@@ -209,7 +225,7 @@ QWidget {
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>820</x>
+      <x>840</x>
       <y>202</y>
       <width>160</width>
       <height>30</height>
@@ -222,7 +238,7 @@ QWidget {
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>1333</x>
+      <x>1353</x>
       <y>219</y>
       <width>150</width>
       <height>31</height>
@@ -238,7 +254,7 @@ QWidget {
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>533</x>
+      <x>543</x>
       <y>219</y>
       <width>150</width>
       <height>31</height>
@@ -254,40 +270,27 @@ QWidget {
    <widget class="QToolButton" name="b_charger_2">
     <property name="geometry">
      <rect>
-      <x>365</x>
-      <y>420</y>
+      <x>370</x>
+      <y>440</y>
       <width>90</width>
       <height>50</height>
      </rect>
     </property>
     <property name="text">
-     <string>===&gt;</string>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="b_charger_3">
-    <property name="geometry">
-     <rect>
-      <x>765</x>
-      <y>420</y>
-      <width>90</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>===&gt;</string>
+     <string>Créer</string>
     </property>
    </widget>
    <widget class="QToolButton" name="b_charger_4">
     <property name="geometry">
      <rect>
-      <x>1165</x>
-      <y>420</y>
+      <x>1195</x>
+      <y>440</y>
       <width>90</width>
       <height>50</height>
      </rect>
     </property>
     <property name="text">
-     <string>===&gt;</string>
+     <string>Créer</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_3">
@@ -454,256 +457,10 @@ QWidget {
      </widget>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_4">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>310</y>
-      <width>256</width>
-      <height>300</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Produit A</string>
-    </property>
-    <widget class="QLabel" name="label_10">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>131</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Diffusivité :</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_9">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>150</y>
-       <width>131</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Decay :</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>70</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>180</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_5">
-    <property name="geometry">
-     <rect>
-      <x>890</x>
-      <y>310</y>
-      <width>250</width>
-      <height>471</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Bille 1</string>
-    </property>
-    <widget class="QLabel" name="label_11">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>131</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Taille :</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_12">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>150</y>
-       <width>131</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Equation :</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>70</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>180</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_5">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>290</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_13">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>260</y>
-       <width>131</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Concentrations :</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_6">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>320</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_7">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>380</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_8">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>350</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_9">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>410</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_14">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>290</y>
-       <width>51</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>A -&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_15">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>320</y>
-       <width>51</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>B -&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_16">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>350</y>
-       <width>51</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>C -&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_17">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>380</y>
-       <width>51</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>D -&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_18">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>410</y>
-       <width>51</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>E -&gt;</string>
-     </property>
-    </widget>
-   </widget>
    <widget class="QGroupBox" name="groupBox_6">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>490</x>
       <y>250</y>
       <width>256</width>
       <height>441</height>
@@ -727,7 +484,7 @@ QWidget {
    <widget class="QGroupBox" name="groupBox_7">
     <property name="geometry">
      <rect>
-      <x>1280</x>
+      <x>1300</x>
       <y>250</y>
       <width>256</width>
       <height>441</height>
@@ -748,6 +505,278 @@ QWidget {
      <layout class="QVBoxLayout" name="verticalLayout_5"/>
     </widget>
    </widget>
+   <widget class="QGroupBox" name="groupBox_8">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>331</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>35</x>
+       <y>50</y>
+       <width>260</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Produit A</string>
+     </property>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Diffusivité :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decay :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>70</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>180</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_9">
+    <property name="geometry">
+     <rect>
+      <x>853</x>
+      <y>260</y>
+      <width>331</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>50</y>
+       <width>250</width>
+       <height>471</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Bille 1</string>
+     </property>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Taille :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Equation :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>70</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>180</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_5">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>290</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>260</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Concentrations :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_6">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>320</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_7">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>380</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_8">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>350</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_9">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>410</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>290</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>A -&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>320</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>B -&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>350</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>C -&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>380</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>D -&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>410</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>E -&gt;</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
    <zorder>frame_2</zorder>
    <zorder>frame</zorder>
    <zorder>frame_3</zorder>
@@ -758,13 +787,12 @@ QWidget {
    <zorder>label_7</zorder>
    <zorder>label_3</zorder>
    <zorder>b_charger_2</zorder>
-   <zorder>b_charger_3</zorder>
    <zorder>b_charger_4</zorder>
    <zorder>groupBox_3</zorder>
-   <zorder>groupBox_4</zorder>
-   <zorder>groupBox_5</zorder>
    <zorder>groupBox_6</zorder>
    <zorder>groupBox_7</zorder>
+   <zorder>groupBox_8</zorder>
+   <zorder>groupBox_9</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
