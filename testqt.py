@@ -30,6 +30,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.b_charger.clicked.connect(self.load)
         self.b_sauver.clicked.connect(self.save)
 
+
   def save(self):
 
     string, _  = QFileDialog().getSaveFileName(self, 'Sauvegarder fichier', '~')
@@ -78,24 +79,35 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       self.conf.produits.append(beads.Produit(self.lineEdit.text(),self.lineEdit_2.text()))
       np = len(self.conf.produits)-1
       self.label_3.setText(str(np+1) + " Produits")
-      self.verticalLayout_2.add(ok(self.conf.produits[np]getDescription()))
-      
+      self.verticalLayout_2.addWidget(ok(self.conf.produits[np]getDescription()))
+      self.verticalLayout_2.itemAt(np).connect(self.modifyProduct)
+
+  def modifyProduct(self,k):
+      self.self.lineEdit.setText(k.diffusivity)
+      self.self.lineEdit_2.setText(k.decay)
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
     self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
     nb = len(conf.billes)-1
     self.verticalLayout_5.addWidget(ok(self.conf.billes[nb].getDescription()))
-    self.label_7.setText(str(nb+1) + " billes")
+    self.label_7.setText(str(nb+1) + " Billes")
      
 
 class ok(QGroupBox, Ui_GroupBox):
+
+  clicked = Signal(ok)
 	def __init__(self,parent,params):
 		super(ok, self).__init__(parent)
 		self.setupUi(self)
     self.label.setText(params[0])
     self.label_3.setText(params[1])
     self.label_2.setText(params[2])
+
+  def c(self):
+    self.clicked.emit(self)
+
+  self.toolButton.clicked.connect(self.c)
 
        
 app = QApplication(sys.argv)
