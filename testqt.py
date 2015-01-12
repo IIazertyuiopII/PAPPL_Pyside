@@ -23,7 +23,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.verticalLayout_2.addWidget(self.grpbox2)
         self.verticalLayout_2.addWidget(self.grpbox3)
 
-        conf = beads.Configuration("default")
+        self.conf = beads.Configuration("default")
 
         #self.lineEdit.textEdited.connect(self.textchange)
         #event bindings
@@ -41,29 +41,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def save(self):
 
-    #string = QFileDialog()
+    string, _  = QFileDialog().getOpenFileName(self, 'Sauvegarder fichier', '~')
 
     with open(string,rwb) as dump:
       if os.path.isfile(string):
-        if pickle.load(string).name != conf.name:
+        if pickle.load(string).name != self.conf.name:
           error = "fichier deja existant, ecraser ?"
           return
-      pickle.dump(conf, dump)
+      pickle.dump(self.conf, dump)
 
   def load(self):
 
     #string = QFileDialog()
 
-    c1 = copy.deepcopy(conf)
+    c1 = copy.deepcopy(self.conf)
     try:
-      conf=pickle.load(string)
+      self.conf=pickle.load(string)
     except (pickle.UnpicklingError,ValueError) as err :
       if 'c1' in locals():
-        conf = c1
+        self.conf = c1
       error = err
-    if type(conf) != Configuration:
+    if type(self.conf) != Configuration:
       err = "Fichier incompatible"
-    del conf
+    del self.conf
     #Si tout va bien on affiche
 
   def textchange(self):
@@ -78,20 +78,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
   #       Desavtiver les partie useless
 
   def majOptions(self):
-      conf.opt = beads.Option(self.spinBox.value(),self.spinBox_2.value(),self.spinBox_3.value())
+      self.conf.opt = beads.Option(self.spinBox.value(),self.spinBox_2.value(),self.spinBox_3.value())
 
   def addProduct(self):
-      conf.produits.append(Product(self.lineEdit.text(),self.lineEdit_2.text()))
-      np = len(conf.produits)-1
+      self.conf.produits.append(Product(self.lineEdit.text(),self.lineEdit_2.text()))
+      np = len(self.conf.produits)-1
       self.label_3.setText(str(np) + " Produits")
-      self.verticalLayout_2.add(conf.produits[np])
+      self.verticalLayout_2.add(self.conf.produits[np])
       
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
-    conf.billes.append(Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
+    self.conf.billes.append(Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
     nb = len(conf.billes)-1
-    self.verticalLayout_5.add(conf.billes[nb])
+    self.verticalLayout_5.add(self.conf.billes[nb])
     self.label_7.setText(str(nb) + " billes")
      
 
