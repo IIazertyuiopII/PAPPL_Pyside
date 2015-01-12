@@ -95,7 +95,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 def mapAlphabet(k):
   c = {0:'a',1:'b',2:'c',3:'d',4:'e',5:'f'}
-  if c.contains(k):
+  if c.has_key(k):
     return c[k]
   else:
     return 'Q'
@@ -108,13 +108,14 @@ class ok(QGroupBox, Ui_GroupBox):
   def __init__(self,parent,params):
     super(ok, self).__init__(parent)
     self.setupUi(self)
+    self.num = params[0]
     self.label.setText(mapAlphabet(params[0]))
     self.label_3.setText(params[1])
     self.label_2.setText(params[2])
     self.toolButton.clicked.connect(self.c)
 
   def c(self):
-    self.modif.emit(int(self.label.text()))
+    self.modif.emit(int(self.num))
 
 app = QApplication(sys.argv)
 frame = MainWindow()
