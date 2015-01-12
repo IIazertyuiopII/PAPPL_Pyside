@@ -18,9 +18,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.conf = beads.Configuration("default")
 
-        #self.lineEdit.textEdited.connect(self.textchange)
-        #event bindings
-
         self.b_charger_2.clicked.connect(self.addProduct)
         self.b_charger_4.clicked.connect(self.addBille)
         self.spinBox.valueChanged.connect(self.majOptions)
@@ -61,14 +58,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def textchange(self):
   		print("textchanged")
-  		print(self.lineEdit.text())  
-
-  # def modifyProductList(self,np):
-  #       self.label_3.setText(str(np) + " Produits")
-  #       if np < 2:
-  #         self.lineEdit_6.
-  #       if np > 3
-  #       Desavtiver les partie useless
+  		print(self.lineEdit.text())
 
   def majOptions(self):
       self.conf.opt = beads.Option(self.spinBox.value(),self.spinBox_2.value(),self.spinBox_3.value())
@@ -82,9 +72,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       tmp.modif.connect(self.modifyProduct)
       self.verticalLayout_2.insertWidget(0,tmp,stretch=1)
 
+      self.lineEdit.setText("")
+      self.lineEdit_2.setText("")
+
   def modifyProduct(self,k):
-      self.lineEdit.setText(k.diffusivity)
-      self.lineEdit_2.setText(k.decay)
+
+      for i in self.conf.produits :
+        if i.num == k:
+        self.lineEdit.setText(i.diffusivity)
+        self.lineEdit_2.setText(i.decay)
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
@@ -108,11 +104,9 @@ class ok(QGroupBox, Ui_GroupBox):
     self.label_2.setText(params[2])
     self.toolButton.clicked.connect(self.c)
 
-
   def c(self):
     self.modif.emit(int(self.label.text()))
 
-       
 app = QApplication(sys.argv)
 frame = MainWindow()
 frame.show()

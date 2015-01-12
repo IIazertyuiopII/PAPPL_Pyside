@@ -21,7 +21,7 @@ class Bille:
 		self.size = size
 		self.conc = conc
 		self.num = Bille.id
-		id += 1
+		Bille.id += 1
 	def parseur(self):
 		pass
 	def getEquation(self):
