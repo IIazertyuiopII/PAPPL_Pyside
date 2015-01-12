@@ -34,7 +34,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def save(self):
 
-    string, _  = QFileDialog().getOpenFileName(self, 'Sauvegarder fichier', '~')
+    string, _  = QFileDialog().getSaveFileName(self, 'Sauvegarder fichier', '~')
+    #Si annulation ...
+    if not string:
+      return
 
     with open(string,rwb) as dump:
       if os.path.isfile(string):
@@ -44,6 +47,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       pickle.dump(self.conf, dump)
 
   def load(self):
+      string, _  = QFileDialog().getOpenFileName(self, 'Ouvrir fichier', '~')
+      if not string:
+        return
 
     #string = QFileDialog()
 
