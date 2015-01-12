@@ -23,8 +23,8 @@
 #groupBox_6,#groupBox_7 {
 
 	border : 10px solid #26c2f9;
-	border-top-size : 20px;
-	border-bottom-size : 20px;	
+	border-bottom-width : 20px;
+	border-bottom-width : 20px;	
 
 }
 
@@ -40,7 +40,6 @@
 #label, #label_2 ,#label_8,#label_10,#label_9,#label_11,#label_12,#label_13,#label_14,#label_15,#label_16,#label_17,#label_18,#label_19{
 
 	font-size : 15px;
-	border : 1px solid #a4c7c0;
     padding : 0px 3px;
 
 }
@@ -114,6 +113,7 @@ QWidget {
 
 .QGroupBox{
 
+	border-bottom-right-radius : 20px;
 	color : 0040f4;
 	font-weight : 600;
     border : 0px;
@@ -124,7 +124,8 @@ QWidget {
 .QLineEdit, .QSpinBox{
 
 	color : #000035;
-    background-color : #b1b3b4;
+    padding : 2px;
+    font-size : 14pt;
 
 }
 </string>
@@ -352,7 +353,7 @@ QWidget {
         <x>180</x>
         <y>30</y>
         <width>85</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
       <property name="minimum">
@@ -374,7 +375,7 @@ QWidget {
         <x>180</x>
         <y>60</y>
         <width>85</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
       <property name="maximum">
@@ -403,7 +404,7 @@ QWidget {
         <x>470</x>
         <y>40</y>
         <width>85</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
       <property name="minimum">
@@ -478,7 +479,21 @@ QWidget {
        <height>391</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2"/>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_7">
@@ -502,7 +517,21 @@ QWidget {
        <height>391</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_5"/>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_8">
@@ -561,7 +590,7 @@ QWidget {
         <x>100</x>
         <y>70</y>
         <width>113</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
      </widget>
@@ -571,7 +600,7 @@ QWidget {
         <x>100</x>
         <y>180</y>
         <width>113</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
      </widget>
@@ -633,7 +662,7 @@ QWidget {
         <x>100</x>
         <y>70</y>
         <width>113</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
      </widget>
@@ -643,7 +672,7 @@ QWidget {
         <x>100</x>
         <y>180</y>
         <width>113</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
      </widget>
@@ -653,7 +682,7 @@ QWidget {
         <x>100</x>
         <y>290</y>
         <width>113</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
      </widget>
@@ -676,7 +705,7 @@ QWidget {
         <x>100</x>
         <y>320</y>
         <width>113</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
      </widget>
@@ -686,7 +715,7 @@ QWidget {
         <x>100</x>
         <y>380</y>
         <width>113</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
      </widget>
@@ -696,7 +725,7 @@ QWidget {
         <x>100</x>
         <y>350</y>
         <width>113</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
      </widget>
@@ -706,7 +735,7 @@ QWidget {
         <x>100</x>
         <y>410</y>
         <width>113</width>
-        <height>20</height>
+        <height>24</height>
        </rect>
       </property>
      </widget>

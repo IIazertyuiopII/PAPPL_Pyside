@@ -15,13 +15,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
   def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
-        	
-        self.grpbox = ok(self)
-        self.grpbox2 = ok(self)
-        self.grpbox3 = ok(self)
-        self.verticalLayout_2.addWidget(self.grpbox)
-        self.verticalLayout_2.addWidget(self.grpbox2)
-        self.verticalLayout_2.addWidget(self.grpbox3)
 
         self.conf = beads.Configuration("default")
 
@@ -81,7 +74,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       self.conf.opt = beads.Option(self.spinBox.value(),self.spinBox_2.value(),self.spinBox_3.value())
 
   def addProduct(self):
-      self.conf.produits.append(Product(self.lineEdit.text(),self.lineEdit_2.text()))
+      self.conf.produits.append(beads.Produit(self.lineEdit.text(),self.lineEdit_2.text()))
       np = len(self.conf.produits)-1
       self.label_3.setText(str(np) + " Produits")
       self.verticalLayout_2.add(self.conf.produits[np])
@@ -89,7 +82,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
-    self.conf.billes.append(Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
+    self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
     nb = len(conf.billes)-1
     self.verticalLayout_5.add(self.conf.billes[nb])
     self.label_7.setText(str(nb) + " billes")

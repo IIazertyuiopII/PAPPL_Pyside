@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'entrée_données.ui'
 #
-# Created: Mon Jan 12 08:52:05 2015
+# Created: Mon Jan 12 09:09:46 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -22,8 +22,8 @@ class Ui_MainWindow(object):
 "#groupBox_6,#groupBox_7 {\n"
 "\n"
 "    border : 10px solid #26c2f9;\n"
-"    border-top-size : 20px;\n"
-"    border-bottom-size : 20px;    \n"
+"    border-bottom-width : 20px;\n"
+"    border-bottom-width : 20px;    \n"
 "\n"
 "}\n"
 "\n"
@@ -39,7 +39,6 @@ class Ui_MainWindow(object):
 "#label, #label_2 ,#label_8,#label_10,#label_9,#label_11,#label_12,#label_13,#label_14,#label_15,#label_16,#label_17,#label_18,#label_19{\n"
 "\n"
 "    font-size : 15px;\n"
-"    border : 1px solid #a4c7c0;\n"
 "    padding : 0px 3px;\n"
 "\n"
 "}\n"
@@ -113,6 +112,7 @@ class Ui_MainWindow(object):
 "\n"
 ".QGroupBox{\n"
 "\n"
+"    border-bottom-right-radius : 20px;\n"
 "    color : 0040f4;\n"
 "    font-weight : 600;\n"
 "    border : 0px;\n"
@@ -123,7 +123,8 @@ class Ui_MainWindow(object):
 ".QLineEdit, .QSpinBox{\n"
 "\n"
 "    color : #000035;\n"
-"    background-color : #b1b3b4;\n"
+"    padding : 2px;\n"
+"    font-size : 14pt;\n"
 "\n"
 "}\n"
 "")
@@ -187,14 +188,14 @@ class Ui_MainWindow(object):
         self.label_2.setGeometry(QtCore.QRect(40, 60, 131, 20))
         self.label_2.setObjectName("label_2")
         self.spinBox = QtGui.QSpinBox(self.groupBox)
-        self.spinBox.setGeometry(QtCore.QRect(180, 30, 85, 20))
+        self.spinBox.setGeometry(QtCore.QRect(180, 30, 85, 24))
         self.spinBox.setMinimum(1)
         self.spinBox.setMaximum(500001)
         self.spinBox.setSingleStep(1000)
         self.spinBox.setProperty("value", 100000)
         self.spinBox.setObjectName("spinBox")
         self.spinBox_2 = QtGui.QSpinBox(self.groupBox)
-        self.spinBox_2.setGeometry(QtCore.QRect(180, 60, 85, 20))
+        self.spinBox_2.setGeometry(QtCore.QRect(180, 60, 85, 24))
         self.spinBox_2.setMaximum(100)
         self.spinBox_2.setSingleStep(1)
         self.spinBox_2.setObjectName("spinBox_2")
@@ -202,7 +203,7 @@ class Ui_MainWindow(object):
         self.label_8.setGeometry(QtCore.QRect(290, 40, 171, 20))
         self.label_8.setObjectName("label_8")
         self.spinBox_3 = QtGui.QSpinBox(self.groupBox)
-        self.spinBox_3.setGeometry(QtCore.QRect(470, 40, 85, 20))
+        self.spinBox_3.setGeometry(QtCore.QRect(470, 40, 85, 24))
         self.spinBox_3.setMinimum(1)
         self.spinBox_3.setMaximum(10)
         self.spinBox_3.setSingleStep(1)
@@ -232,6 +233,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QtGui.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+        spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.verticalLayout_2.addItem(spacerItem)
         self.groupBox_7 = QtGui.QGroupBox(self.centralwidget)
         self.groupBox_7.setGeometry(QtCore.QRect(1300, 250, 256, 441))
         self.groupBox_7.setTitle("")
@@ -242,6 +245,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_5 = QtGui.QVBoxLayout(self.verticalLayoutWidget_4)
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
+        spacerItem1 = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem1)
         self.groupBox_8 = QtGui.QGroupBox(self.centralwidget)
         self.groupBox_8.setGeometry(QtCore.QRect(20, 260, 331, 401))
         self.groupBox_8.setTitle("")
@@ -256,10 +261,10 @@ class Ui_MainWindow(object):
         self.label_9.setGeometry(QtCore.QRect(20, 150, 131, 20))
         self.label_9.setObjectName("label_9")
         self.lineEdit = QtGui.QLineEdit(self.groupBox_4)
-        self.lineEdit.setGeometry(QtCore.QRect(100, 70, 113, 20))
+        self.lineEdit.setGeometry(QtCore.QRect(100, 70, 113, 24))
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtGui.QLineEdit(self.groupBox_4)
-        self.lineEdit_2.setGeometry(QtCore.QRect(100, 180, 113, 20))
+        self.lineEdit_2.setGeometry(QtCore.QRect(100, 180, 113, 24))
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.groupBox_9 = QtGui.QGroupBox(self.centralwidget)
         self.groupBox_9.setGeometry(QtCore.QRect(853, 260, 331, 571))
@@ -275,28 +280,28 @@ class Ui_MainWindow(object):
         self.label_12.setGeometry(QtCore.QRect(20, 150, 131, 20))
         self.label_12.setObjectName("label_12")
         self.lineEdit_3 = QtGui.QLineEdit(self.groupBox_5)
-        self.lineEdit_3.setGeometry(QtCore.QRect(100, 70, 113, 20))
+        self.lineEdit_3.setGeometry(QtCore.QRect(100, 70, 113, 24))
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.lineEdit_4 = QtGui.QLineEdit(self.groupBox_5)
-        self.lineEdit_4.setGeometry(QtCore.QRect(100, 180, 113, 20))
+        self.lineEdit_4.setGeometry(QtCore.QRect(100, 180, 113, 24))
         self.lineEdit_4.setObjectName("lineEdit_4")
         self.lineEdit_5 = QtGui.QLineEdit(self.groupBox_5)
-        self.lineEdit_5.setGeometry(QtCore.QRect(100, 290, 113, 20))
+        self.lineEdit_5.setGeometry(QtCore.QRect(100, 290, 113, 24))
         self.lineEdit_5.setObjectName("lineEdit_5")
         self.label_13 = QtGui.QLabel(self.groupBox_5)
         self.label_13.setGeometry(QtCore.QRect(20, 260, 131, 20))
         self.label_13.setObjectName("label_13")
         self.lineEdit_6 = QtGui.QLineEdit(self.groupBox_5)
-        self.lineEdit_6.setGeometry(QtCore.QRect(100, 320, 113, 20))
+        self.lineEdit_6.setGeometry(QtCore.QRect(100, 320, 113, 24))
         self.lineEdit_6.setObjectName("lineEdit_6")
         self.lineEdit_7 = QtGui.QLineEdit(self.groupBox_5)
-        self.lineEdit_7.setGeometry(QtCore.QRect(100, 380, 113, 20))
+        self.lineEdit_7.setGeometry(QtCore.QRect(100, 380, 113, 24))
         self.lineEdit_7.setObjectName("lineEdit_7")
         self.lineEdit_8 = QtGui.QLineEdit(self.groupBox_5)
-        self.lineEdit_8.setGeometry(QtCore.QRect(100, 350, 113, 20))
+        self.lineEdit_8.setGeometry(QtCore.QRect(100, 350, 113, 24))
         self.lineEdit_8.setObjectName("lineEdit_8")
         self.lineEdit_9 = QtGui.QLineEdit(self.groupBox_5)
-        self.lineEdit_9.setGeometry(QtCore.QRect(100, 410, 113, 20))
+        self.lineEdit_9.setGeometry(QtCore.QRect(100, 410, 113, 24))
         self.lineEdit_9.setObjectName("lineEdit_9")
         self.label_14 = QtGui.QLabel(self.groupBox_5)
         self.label_14.setGeometry(QtCore.QRect(40, 290, 51, 20))

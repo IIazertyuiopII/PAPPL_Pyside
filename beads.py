@@ -5,10 +5,10 @@ import copy
 class Produit:
 	id = 0
 	def __init__(self,diffu, deay):
-		self.num = id
+		self.num = Produit.id
 		self.diffusivity = diffu
 		self.decay = deay
-		id += 1
+		Produit.id += 1
 	def __str__(self):
 		return "Produit " + str(self.num) + " Df : " + str(diffusivity) + "Dc : " + str(decay)
 
@@ -18,7 +18,7 @@ class Bille:
 		self.eq = equation
 		self.size = size
 		self.conc = conc
-		self.num = id
+		self.num = Bille.id
 		id += 1
 	def parseur(self):
 		pass
