@@ -94,6 +94,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     self.label_7.setText(str(nb+1) + " billes")
 
 def mapAlphabet(k):
+
   k = int(k)
   c = {0:'A :',1:'B :',2:'C :',3:'D :',4:'E :',5:'F :'}
   if k in c:
@@ -109,13 +110,14 @@ class ok(QGroupBox, Ui_GroupBox):
   def __init__(self,parent,params):
     super(ok, self).__init__(parent)
     self.setupUi(self)
+    self.num = params[0]
     self.label.setText(mapAlphabet(params[0]))
     self.label_3.setText(params[1])
     self.label_2.setText(params[2])
     self.toolButton.clicked.connect(self.c)
 
   def c(self):
-    self.modif.emit(int(self.label.text()))
+    self.modif.emit(int(self.num))
 
 app = QApplication(sys.argv)
 frame = MainWindow()
