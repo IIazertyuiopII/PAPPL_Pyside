@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ok.ui'
 #
-# Created: Mon Jan 12 09:09:49 2015
+# Created: Mon Jan 12 09:55:17 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,7 +12,7 @@ from PySide import QtCore, QtGui
 class Ui_GroupBox(object):
     def setupUi(self, GroupBox):
         GroupBox.setObjectName("GroupBox")
-        GroupBox.resize(192, 35)
+        GroupBox.resize(187, 35)
         GroupBox.setStyleSheet(".QGroupBox{\n"
 "\n"
 "    color : white;\n"
@@ -37,10 +37,14 @@ class Ui_GroupBox(object):
 "    color : #000035;\n"
 "    background-color : #b1b3b4;\n"
 "\n"
+"}\n"
+"\n"
+"#toolButton{\n"
+"    background-image : url(res/bite.png);\n"
 "}")
         GroupBox.setTitle("")
         self.label = QtGui.QLabel(GroupBox)
-        self.label.setGeometry(QtCore.QRect(10, 10, 31, 20))
+        self.label.setGeometry(QtCore.QRect(11, 7, 31, 20))
         self.label.setObjectName("label")
         self.label_2 = QtGui.QLabel(GroupBox)
         self.label_2.setGeometry(QtCore.QRect(110, 10, 41, 16))

@@ -38,6 +38,10 @@
 	color : #000035;
     background-color : #b1b3b4;
 
+}
+
+#toolButton{
+	background-image : url(res/bite.png);
 }</string>
   </property>
   <property name="title">

@@ -34,10 +34,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def save(self):
 
-    string, _  = QFileDialog().getSaveFileName(self, 'Sauvegarder fichier', '~')
-    #Si annulation ...
-    if not string:
-      return
+    string, _  = QFileDialog().getOpenFileName(self, 'Sauvegarder fichier', '~')
 
     with open(string,rwb) as dump:
       if os.path.isfile(string):
@@ -47,23 +44,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       pickle.dump(self.conf, dump)
 
   def load(self):
-      string, _  = QFileDialog().getOpenFileName(self, 'Ouvrir fichier', '~')
-      if not string:
-        return
 
-    #string = QFileDialog()
+   #string = QFileDialog()
 
-    c1 = copy.deepcopy(self.conf)
-    try:
-      self.conf=pickle.load(string)
-    except (pickle.UnpicklingError,ValueError) as err :
-      if 'c1' in locals():
-        self.conf = c1
-      error = err
-    if type(self.conf) != Configuration:
+   c1 = copy.deepcopy(self.conf)
+   try:
+     self.conf=pickle.load(string)
+   except (pickle.UnpicklingError,ValueError) as err :
+   	if 'c1' in locals():
+    	self.conf = c1
+    	error = err
+   if type(self.conf) != Configuration:
       err = "Fichier incompatible"
-    del self.conf
-    #Si tout va bien on affiche
+   del self.conf
+   #Si tout va bien on affiche
 
   def textchange(self):
   		print("textchanged")
@@ -95,9 +89,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
      
 
 class ok(QGroupBox, Ui_GroupBox):
-	def __init__(self,parent):
+	def __init__(self,parent,string):
 		super(ok, self).__init__(parent)
 		self.setupUi(self)
+		self.label
 
        
 app = QApplication(sys.argv)
