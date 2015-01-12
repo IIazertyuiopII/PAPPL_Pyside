@@ -30,6 +30,7 @@
     padding : 0px 3px;
 	font-weight : 400;
 	background-color : #0098cc;
+	color : black;
 
 }
 

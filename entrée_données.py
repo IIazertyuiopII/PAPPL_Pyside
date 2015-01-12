@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'entrée_données.ui'
 #
-# Created: Mon Jan 12 10:44:42 2015
+# Created: Mon Jan 12 12:09:43 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -15,15 +15,16 @@ class Ui_MainWindow(object):
         MainWindow.resize(1600, 900)
         MainWindow.setStyleSheet("#groupBox_3,#groupBox_8,#groupBox_9 {\n"
 "\n"
-"    background : #26c2f9;\n"
+"    background : #2388DB;\n"
 "\n"
 "}\n"
 "\n"
 "#groupBox_6,#groupBox_7 {\n"
 "\n"
-"    border : 10px solid #26c2f9;\n"
+"    border : 10px solid #2388DB;\n"
 "    border-bottom-width : 20px;\n"
 "    border-bottom-width : 20px;    \n"
+"    border-radius : 0px;\n"
 "\n"
 "}\n"
 "\n"
@@ -78,10 +79,11 @@ class Ui_MainWindow(object):
 "\n"
 ".QLabel{\n"
 "\n"
-"    font-weight : 400;\n"
+"    font-weight : 500;\n"
 "    border : none;\n"
 "    font-size : 16pt;\n"
-"    background-color : #f0fff0;\n"
+"    color : #2388DB;\n"
+"    background-color : #eee;\n"
 "    \n"
 "}\n"
 "\n"
@@ -116,7 +118,7 @@ class Ui_MainWindow(object):
 "    color : 0040f4;\n"
 "    font-weight : 600;\n"
 "    border : 0px;\n"
-"    background-color : #c7eef9;\n"
+"    background-color : #fff;\n"
 "\n"
 "}\n"
 "\n"
@@ -278,13 +280,13 @@ class Ui_MainWindow(object):
         self.label_11.setGeometry(QtCore.QRect(20, 40, 131, 20))
         self.label_11.setObjectName("label_11")
         self.label_12 = QtGui.QLabel(self.groupBox_5)
-        self.label_12.setGeometry(QtCore.QRect(20, 150, 131, 20))
+        self.label_12.setGeometry(QtCore.QRect(20, 180, 131, 20))
         self.label_12.setObjectName("label_12")
         self.lineEdit_3 = QtGui.QLineEdit(self.groupBox_5)
         self.lineEdit_3.setGeometry(QtCore.QRect(100, 70, 113, 24))
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.lineEdit_4 = QtGui.QLineEdit(self.groupBox_5)
-        self.lineEdit_4.setGeometry(QtCore.QRect(100, 180, 113, 24))
+        self.lineEdit_4.setGeometry(QtCore.QRect(100, 210, 113, 24))
         self.lineEdit_4.setObjectName("lineEdit_4")
         self.lineEdit_5 = QtGui.QLineEdit(self.groupBox_5)
         self.lineEdit_5.setGeometry(QtCore.QRect(100, 290, 113, 24))
@@ -319,6 +321,12 @@ class Ui_MainWindow(object):
         self.label_18 = QtGui.QLabel(self.groupBox_5)
         self.label_18.setGeometry(QtCore.QRect(40, 410, 51, 20))
         self.label_18.setObjectName("label_18")
+        self.label_19 = QtGui.QLabel(self.groupBox_5)
+        self.label_19.setGeometry(QtCore.QRect(20, 110, 131, 20))
+        self.label_19.setObjectName("label_19")
+        self.lineEdit_10 = QtGui.QLineEdit(self.groupBox_5)
+        self.lineEdit_10.setGeometry(QtCore.QRect(100, 140, 113, 24))
+        self.lineEdit_10.setObjectName("lineEdit_10")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1600, 34))
@@ -354,8 +362,8 @@ class Ui_MainWindow(object):
         self.groupBox_4.setTitle(QtGui.QApplication.translate("MainWindow", "Produit A", None, QtGui.QApplication.UnicodeUTF8))
         self.label_10.setText(QtGui.QApplication.translate("MainWindow", "Diffusivité :", None, QtGui.QApplication.UnicodeUTF8))
         self.label_9.setText(QtGui.QApplication.translate("MainWindow", "Decay :", None, QtGui.QApplication.UnicodeUTF8))
-        self.groupBox_5.setTitle(QtGui.QApplication.translate("MainWindow", "Bille 1", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_11.setText(QtGui.QApplication.translate("MainWindow", "Taille :", None, QtGui.QApplication.UnicodeUTF8))
+        self.groupBox_5.setTitle(QtGui.QApplication.translate("MainWindow", "Bille 1 :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_11.setText(QtGui.QApplication.translate("MainWindow", "Exemplaires :", None, QtGui.QApplication.UnicodeUTF8))
         self.label_12.setText(QtGui.QApplication.translate("MainWindow", "Equation :", None, QtGui.QApplication.UnicodeUTF8))
         self.label_13.setText(QtGui.QApplication.translate("MainWindow", "Concentrations :", None, QtGui.QApplication.UnicodeUTF8))
         self.label_14.setText(QtGui.QApplication.translate("MainWindow", "A ->", None, QtGui.QApplication.UnicodeUTF8))
@@ -363,6 +371,7 @@ class Ui_MainWindow(object):
         self.label_16.setText(QtGui.QApplication.translate("MainWindow", "C ->", None, QtGui.QApplication.UnicodeUTF8))
         self.label_17.setText(QtGui.QApplication.translate("MainWindow", "D ->", None, QtGui.QApplication.UnicodeUTF8))
         self.label_18.setText(QtGui.QApplication.translate("MainWindow", "E ->", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_19.setText(QtGui.QApplication.translate("MainWindow", "Taille :", None, QtGui.QApplication.UnicodeUTF8))
         self.actionCharger.setText(QtGui.QApplication.translate("MainWindow", "Charger", None, QtGui.QApplication.UnicodeUTF8))
         self.actionSauver.setText(QtGui.QApplication.translate("MainWindow", "Sauver", None, QtGui.QApplication.UnicodeUTF8))
 
