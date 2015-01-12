@@ -90,7 +90,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
     nb = len(conf.billes)-1
 
-    self.verticalLayout_5.insertWidget(0,ok(self,params=self.conf.billes[nb].getDescription()))
+    self.verticalLayout_5.insertWidget(0,bil(self,params=self.conf.billes[nb].getDescription()))
     self.label_7.setText(str(nb+1) + " billes")
 
 def mapAlphabet(k):
@@ -123,7 +123,7 @@ class bil(QGroupBox, Ui_GroupBox):
   deriv = Signal(int)
 
   def __init__(self,parent,params):
-    super(ok, self).__init__(parent)
+    super(bil, self).__init__(parent)
     self.setupUi(self)
     self.num = params[0]
     self.taille.setText(params[1])
