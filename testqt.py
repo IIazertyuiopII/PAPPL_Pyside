@@ -30,8 +30,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.b_charger.clicked.connect(self.load)
         self.b_sauver.clicked.connect(self.save)
 
-
-
   def save(self):
 
     string, _  = QFileDialog().getOpenFileName(self, 'Sauvegarder fichier', '~')
@@ -44,20 +42,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       pickle.dump(self.conf, dump)
 
   def load(self):
+<<<<<<< HEAD
 
-   #string = QFileDialog()
-
-   c1 = copy.deepcopy(self.conf)
-   try:
-     self.conf=pickle.load(string)
-   except (pickle.UnpicklingError,ValueError) as err :
-   	if 'c1' in locals():
-    	self.conf = c1
-    	error = err
-   if type(self.conf) != Configuration:
-      err = "Fichier incompatible"
-   del self.conf
-   #Si tout va bien on affiche
+      string, _  = QFileDialog().getOpenFileName(self, 'Ouvrir fichier', '~')
+      if not string:
+        return
+      c1 = copy.deepcopy(self.conf)
+      try:
+        self.conf=pickle.load(string)
+      except (pickle.UnpicklingError,ValueError) as err :
+        if 'c1' in locals():
+          self.conf = c1
+        error = err
+      if type(self.conf) != Configuration:
+        err = "Fichier incompatible"
+      del self.conf
+      #Si tout va bien on affiche
+>>>>>>> e27273b3633fcd3b2685a06fdab11986d59d8b6f
 
   def textchange(self):
   		print("textchanged")
@@ -76,23 +77,32 @@ class MainWindow(QMainWindow, Ui_MainWindow):
   def addProduct(self):
       self.conf.produits.append(beads.Produit(self.lineEdit.text(),self.lineEdit_2.text()))
       np = len(self.conf.produits)-1
-      self.label_3.setText(str(np) + " Produits")
-      self.verticalLayout_2.add(self.conf.produits[np])
+      self.label_3.setText(str(np+1) + " Produits")
+      self.verticalLayout_2.add(ok(self.conf.produits[np]getDescription()))
       
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
     self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
     nb = len(conf.billes)-1
-    self.verticalLayout_5.add(self.conf.billes[nb])
-    self.label_7.setText(str(nb) + " billes")
+    self.verticalLayout_5.addWidget(ok(self.conf.billes[nb].getDescription()))
+    self.label_7.setText(str(nb+1) + " billes")
      
 
 class ok(QGroupBox, Ui_GroupBox):
+<<<<<<< HEAD
 	def __init__(self,parent,string):
 		super(ok, self).__init__(parent)
 		self.setupUi(self)
 		self.label
+=======
+	def __init__(self,parent,params):
+		super(ok, self).__init__(parent)
+		self.setupUi(self)
+    self.label.setText(params[0])
+    self.label_3.setText(params[1])
+    self.label_2.setText(params[2])
+>>>>>>> e27273b3633fcd3b2685a06fdab11986d59d8b6f
 
        
 app = QApplication(sys.argv)
