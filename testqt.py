@@ -42,7 +42,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       pickle.dump(self.conf, dump)
 
   def load(self):
-<<<<<<< HEAD
 
       string, _  = QFileDialog().getOpenFileName(self, 'Ouvrir fichier', '~')
       if not string:
@@ -58,7 +57,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         err = "Fichier incompatible"
       del self.conf
       #Si tout va bien on affiche
->>>>>>> e27273b3633fcd3b2685a06fdab11986d59d8b6f
 
   def textchange(self):
   		print("textchanged")
@@ -78,7 +76,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       self.conf.produits.append(beads.Produit(self.lineEdit.text(),self.lineEdit_2.text()))
       np = len(self.conf.produits)-1
       self.label_3.setText(str(np+1) + " Produits")
-      self.verticalLayout_2.add(ok(self.conf.produits[np]getDescription()))
+      self.verticalLayout_2.addWidget(ok(self.conf.produits[np].getDescription()))
       
 
   def addBille(self):
@@ -90,21 +88,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
      
 
 class ok(QGroupBox, Ui_GroupBox):
-<<<<<<< HEAD
-	def __init__(self,parent,string):
-		super(ok, self).__init__(parent)
-		self.setupUi(self)
-		self.label
-=======
-	def __init__(self,parent,params):
-		super(ok, self).__init__(parent)
-		self.setupUi(self)
+
+  def __init__(self,parent,params):
+    super(ok, self).__init__(parent)
+    self.setupUi(self)
     self.label.setText(params[0])
     self.label_3.setText(params[1])
     self.label_2.setText(params[2])
->>>>>>> e27273b3633fcd3b2685a06fdab11986d59d8b6f
 
-       
 app = QApplication(sys.argv)
 frame = MainWindow()
 frame.show()
