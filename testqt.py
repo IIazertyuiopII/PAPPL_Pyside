@@ -94,11 +94,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     self.label_7.setText(str(nb+1) + " billes")
 
 def mapAlphabet(k):
-  c = {0:'a',1:'b',2:'c',3:'d',4:'e',5:'f'}
-  if c.contains(k):
+  k = int(k)
+  c = {0:'A :',1:'B :',2:'C :',3:'D :',4:'E :',5:'F :'}
+  if k in c:
     return c[k]
   else:
-    return 'Q'
+    return 'erreur'
 
 
 class ok(QGroupBox, Ui_GroupBox):
