@@ -9,6 +9,8 @@ class Produit:
 		self.diffusivity = diffu
 		self.decay = deay
 		Produit.id += 1
+	def getDescription(self):
+		return [str(self.num),str(diffusivity),str(decay)]
 	def __str__(self):
 		return "Produit " + str(self.num) + " Df : " + str(diffusivity) + "Dc : " + str(decay)
 
@@ -28,6 +30,8 @@ class Bille:
 		pass
 	def __str__(self):
 		return "Bille " + str(self.num) + " Size : " + str(self.size) + "\nEq : " + self.eq + "\nConc : " + str(self.conc)
+	def getDescription(self):
+		return [str(self.num),str(self.size),str(self.eq),str(self.conc)]
 
 
 class Option:
