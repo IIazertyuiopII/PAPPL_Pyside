@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'entrée_données.ui'
 #
-# Created: Mon Jan 12 10:02:11 2015
+# Created: Mon Jan 12 10:25:51 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -228,12 +228,13 @@ class Ui_MainWindow(object):
         self.groupBox_6.setTitle("")
         self.groupBox_6.setObjectName("groupBox_6")
         self.verticalLayoutWidget = QtGui.QWidget(self.groupBox_6)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(40, 30, 181, 391))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(40, 30, 189, 391))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout_2 = QtGui.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout_2.setSizeConstraint(QtGui.QLayout.SetMinimumSize)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        spacerItem = QtGui.QSpacerItem(187, 100, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem)
         self.groupBox_7 = QtGui.QGroupBox(self.centralwidget)
         self.groupBox_7.setGeometry(QtCore.QRect(1300, 250, 256, 441))

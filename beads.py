@@ -10,9 +10,9 @@ class Produit:
 		self.decay = deay
 		Produit.id += 1
 	def getDescription(self):
-		return [str(self.num),str(diffusivity),str(decay)]
+		return [str(self.num),str(self.diffusivity),str(self.decay)]
 	def __str__(self):
-		return "Produit " + str(self.num) + " Df : " + str(diffusivity) + "Dc : " + str(decay)
+		return "Produit " + str(self.num) + " Df : " + str(self.diffusivity) + "Dc : " + str(self.decay)
 
 class Bille:
 	id = 0 

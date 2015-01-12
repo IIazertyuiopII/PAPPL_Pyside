@@ -76,14 +76,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       self.conf.produits.append(beads.Produit(self.lineEdit.text(),self.lineEdit_2.text()))
       np = len(self.conf.produits)-1
       self.label_3.setText(str(np+1) + " Produits")
-      self.verticalLayout_2.addWidget(ok(self.conf.produits[np].getDescription()))
+      self.verticalLayout_2.insertWidget(0,ok(self,params=self.conf.produits[np].getDescription()),stretch=1)
       
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
     self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
     nb = len(conf.billes)-1
-    self.verticalLayout_5.addWidget(ok(self.conf.billes[nb].getDescription()))
+    self.verticalLayout_5.insertWidget(0,ok(self,params=self.conf.billes[nb].getDescription()))
     self.label_7.setText(str(nb+1) + " billes")
      
 

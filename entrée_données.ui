@@ -178,8 +178,6 @@ QWidget {
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <zorder>b_charger_4</zorder>
-    <zorder>b_charger_4</zorder>
    </widget>
    <widget class="QFrame" name="frame_4">
     <property name="geometry">
@@ -475,20 +473,26 @@ QWidget {
       <rect>
        <x>40</x>
        <y>30</y>
-       <width>181</width>
+       <width>189</width>
        <height>391</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
       <item>
        <spacer name="verticalSpacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>20</width>
-          <height>40</height>
+          <width>187</width>
+          <height>100</height>
          </size>
         </property>
        </spacer>
