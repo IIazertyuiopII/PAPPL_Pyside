@@ -78,12 +78,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       np = len(self.conf.produits)-1
       self.label_3.setText(str(np+1) + " Produits")
 
-      self.verticalLayout_2.insertWidget(0,ok(self,params=self.conf.produits[np].getDescription()),stretch=1)
-      self.verticalLayout_2.itemAt(np).connect(self.modifyProduct)
+      tmp = ok(self,params=self.conf.produits[np].getDescription())
+      tmp.modif.connect(self.modifyProduct)
+      self.verticalLayout_2.insertWidget(0,tmp,stretch=1)
 
   def modifyProduct(self,k):
-      self.self.lineEdit.setText(k.diffusivity)
-      self.self.lineEdit_2.setText(k.decay)
+      self.lineEdit.setText(k.diffusivity)
+      self.lineEdit_2.setText(k.decay)
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
@@ -97,20 +98,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 class ok(QGroupBox, Ui_GroupBox):
 
+  modif = Signal(int)
 
-  clicked = Signal(ok)
-	def __init__(self,parent,params):
-		super(ok, self).__init__(parent)
-		self.setupUi(self)
+  def __init__(self,parent,params):
+    super(ok, self).__init__(parent)
+    self.setupUi(self)
     self.label.setText(params[0])
     self.label_3.setText(params[1])
     self.label_2.setText(params[2])
+    self.toolButton.clicked.connect(self.c)
 
 
   def c(self):
-    self.clicked.emit(self)
-
-  self.toolButton.clicked.connect(self.c)
+    self.modif.emit(int(self.label.text()))
 
        
 app = QApplication(sys.argv)
