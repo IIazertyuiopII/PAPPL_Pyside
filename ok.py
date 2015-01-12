@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ok.ui'
 #
-# Created: Mon Jan 12 11:45:25 2015
+# Created: Mon Jan 12 12:09:45 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -29,6 +29,7 @@ class Ui_GroupBox(object):
 "    padding : 0px 3px;\n"
 "    font-weight : 400;\n"
 "    background-color : #0098cc;\n"
+"    color : black;\n"
 "\n"
 "}\n"
 "\n"
