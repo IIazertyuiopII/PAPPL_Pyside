@@ -51,6 +51,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
               return
 
     with open(string,'wb') as dump:
+      self.conf.name = string
       pickle.dump(self.conf, dump)
 
   def load(self):
@@ -107,24 +108,51 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def modifyProduct(self,k):
 
-      for i in self.conf.produits :
-        if i.num == k:
-         self.lineEdit.setText(i.diffusivity)
-         self.lineEdit_2.setText(i.decay)
-         self.verticalLayout_2.takeAt(k)
-         del i
-         break
+    for i in range(len(self.verticalLayout_2.count())):
+      if verticalLayout_2.itemAt(i).num == k :
+        selectedItem = self.verticalLayout_2.takeAt(i)
+        self.lineEdit.setText(selectedItem.label_3.text())
+        self.lineEdit_2.setText(selectedItem.label_2.text())
+        for j in self.conf.produits:
+          if j.num == k
+            self.conf.produits.pop(self.conf.produits.index(j))
+            break
+        break
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
     self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
     nb = len(self.conf.billes)-1
-
-
-    tmp = ok(self,params=self.conf.billes[nb].getDescription())
-    #tmp.modif.connect(self.modifyBille)
-    self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
     self.label_7.setText(str(nb+1) + " billes")
+
+    tmp = bil(self,params=self.conf.billes[nb].getDescription())
+    tmp.deriv.connect(self.modifBille)
+    self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
+
+    self.lineEdit_5.setText("")
+    self.lineEdit_6.setText("")
+    self.lineEdit_7.setText("")
+    self.lineEdit_8.setText("")
+    self.lineEdit_9.setText("")
+    self.lineEdit_3.setText("")
+    self.lineEdit_4.setText("")
+
+  def modifBille(self,num):
+    for i in range(len(self.verticalLayout_5.count())):
+      if verticalLayout_5.itemAt(i).num == k :
+        for j in self.conf.produits:
+          if j.num == k
+            c = self.conf.produits.pop(self.conf.produits.index(j))
+            break
+        selectedItem = self.verticalLayout_5.takeAt(i)
+        self.lineEdit_3.setText(selectedItem.taille.text())
+        self.lineEdit_4.setText(selectedItem.eq.text())
+        self.lineEdit_5.setText(c.conc[0])
+        self.lineEdit_6.setText(c.conc[1])
+        self.lineEdit_7.setText(c.conc[2])
+        self.lineEdit_8.setText(c.conc[3])
+        self.lineEdit_9.setText(c.conc[4])
+        break
 
 def mapAlphabet(k):
 
