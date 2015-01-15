@@ -30,35 +30,65 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def save(self):
 
-    string, _  = QFileDialog().getOpenFileName(self, 'Sauvegarder fichier', '~')
+    string, _  = QFileDialog().getSaveFileName(self, 'Sauvegarder fichier', '~')
 
-    with open(string,rwb) as dump:
-      if os.path.isfile(string):
-        if pickle.load(string).name != self.conf.name:
-          error = "fichier deja existant, ecraser ?"
-          return
+    if not string:
+      return
+
+    if os.path.isfile(string):
+      with open(string,'rb') as dumpRead:
+        temp = pickle.load(dumpRead)
+        if temp.name != self.conf.name:
+          msgBox = QMessageBox()
+          msgBox.setText("Save")
+          msgBox.setInformativeText("Fichier deja existant, ecraser ?")
+          msgBox.setStandardButtons(QMessageBox.Save | QMessageBox.Cancel)
+          msgBox.setDefaultButton(QMessageBox.Save)
+          ret = msgBox.exec_()
+          dumpRead.close() #Automatiquement liberé après le with, mais bon
+
+          if ret == QMessageBox.Cancel:
+              return
+
+    with open(string,'wb') as dump:
       pickle.dump(self.conf, dump)
 
   def load(self):
 
       string, _  = QFileDialog().getOpenFileName(self, 'Ouvrir fichier', '~')
+
       if not string:
         return
-      c1 = copy.deepcopy(self.conf)
-      try:
-        self.conf=pickle.load(string)
-      except (pickle.UnpicklingError,ValueError) as err :
-        if 'c1' in locals():
-          self.conf = c1
-        error = err
-      if type(self.conf) != Configuration:
-        err = "Fichier incompatible"
-      del self.conf
-      #Si tout va bien on affiche
 
-  def textchange(self):
-  		print("textchanged")
-  		print(self.lineEdit.text())
+      try:
+        loaded=pickle.load(string)
+        if type(loaded) == Configuration :
+          self.conf = loaded
+          self.displayConf()
+        else:
+          raise ValueError
+
+      except (pickle.UnpicklingError,ValueError):
+        QMessageBox.critical(self, "Fichier incompatible ou corrompu.", Dialog.MESSAGE, QMessageBox.ok)
+
+  def displayConf(self):
+    a,b,c = self.conf.opt.nombrePas, self.conf.opt.sizeArena, self.conf.opt.OneEveryN
+    self.spinBox.setValue(a)
+    self.spinBox_2.setValue(b)
+    self.spinBox_3.setValue(c)
+    #Comme setValue va emettre valueChange et écraser opt, on sauvegarde d'abords les values
+
+    for i in range(int(self.verticalLayout_2.count())):
+      self.verticalLayout_2.takeAt(0)
+
+    for i in self.conf.produits:
+      self.addProduct(i)
+
+    for i in range(int(self.verticalLayout_5.count())):
+      self.verticalLayout_5.takeAt(0)
+
+    for i in self.conf.billes:
+      self.addProduct(i)
 
   def majOptions(self):
       self.conf.opt = beads.Option(self.spinBox.value(),self.spinBox_2.value(),self.spinBox_3.value())
