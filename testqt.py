@@ -8,7 +8,7 @@ import PySide
 from PySide.QtGui import *
 from PySide.QtCore import *
 import os,pickle
-from entrée_données import Ui_MainWindow
+from entree_donnees import Ui_MainWindow
 from ok import Ui_GroupBox
 from bil import Ui_GroupBox as Ui_bil 
 
