@@ -7,6 +7,7 @@ import beads
 import PySide
 from PySide.QtGui import *
 from PySide.QtCore import *
+import os,pickle
 from entrée_données import Ui_MainWindow
 from ok import Ui_GroupBox
 from bil import Ui_GroupBox as Ui_bil 
@@ -36,20 +37,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     if not string:
       return
 
-    if os.path.isfile(string):
-      with open(string,'rb') as dumpRead:
-        temp = pickle.load(dumpRead)
-        if temp.name != self.conf.name:
-          msgBox = QMessageBox()
-          msgBox.setText("Save")
-          msgBox.setInformativeText("Fichier deja existant, ecraser ?")
-          msgBox.setStandardButtons(QMessageBox.Save | QMessageBox.Cancel)
-          msgBox.setDefaultButton(QMessageBox.Save)
-          ret = msgBox.exec_()
-          dumpRead.close() #Automatiquement liberé après le with, mais bon
+    # if os.path.isfile(string):
+    #   with open(string,'rb') as dumpRead:
+    #     temp = pickle.load(dumpRead)
+    #     if temp.name != self.conf.name:
+    #       msgBox = QMessageBox()
+    #       msgBox.setText("Save")
+    #       msgBox.setInformativeText("Fichier deja existant, ecraser ?")
+    #       msgBox.setStandardButtons(QMessageBox.Save | QMessageBox.Cancel)
+    #       msgBox.setDefaultButton(QMessageBox.Save)
+    #       ret = msgBox.exec_()
+    #       dumpRead.close() #Automatiquement liberé après le with, mais bon
 
-          if ret == QMessageBox.Cancel:
-              return
+    #       if ret == QMessageBox.Cancel:
+    #           return
 
     with open(string,'wb') as dump:
       self.conf.name = string
@@ -59,12 +60,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
       string, _  = QFileDialog().getOpenFileName(self, 'Ouvrir fichier', '~')
 
+
       if not string:
         return
 
+      string = open(string,"rb")
+
       try:
         loaded=pickle.load(string)
-        if type(loaded) == Configuration :
+        if type(loaded) == beads.Configuration :
           self.conf = loaded
           self.displayConf()
         else:
@@ -84,7 +88,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       self.verticalLayout_2.takeAt(0)
 
     for i in self.conf.produits:
-      self.addProduct(i)
+      self.addProduct()
 
     for i in range(int(self.verticalLayout_5.count())):
       self.verticalLayout_5.takeAt(0)
@@ -109,23 +113,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def modifyProduct(self,k):
 
-# <<<<<<< HEAD
-#       for i in self.conf.produits :
-#         if i.num == k:
-#          self.lineEdit.setText(i.diffusivity)
-#          self.lineEdit_2.setText(i.decay)
-#          c = self.verticalLayout_2.takeAt(k)
-#          del i
-#          break
-#       c.widget().deleteLater()
-# =======
-    for i in range(len(self.verticalLayout_2.count())):
-      if verticalLayout_2.itemAt(i).num == k :
-        selectedItem = self.verticalLayout_2.takeAt(i)
+
+    for i in range(self.verticalLayout_2.count()):
+
+      if(type(self.verticalLayout_2.itemAt(i))==QSpacerItem) :
+        continue
+      
+      if str(self.verticalLayout_2.itemAt(i).widget().num) == str(k) :
+        selectedItem = self.verticalLayout_2.takeAt(i).widget()
         self.lineEdit.setText(selectedItem.label_3.text())
         self.lineEdit_2.setText(selectedItem.label_2.text())
+        selectedItem.deleteLater()
         for j in self.conf.produits:
-          if j.num == k
+          if j.num == k :
             self.conf.produits.pop(self.conf.produits.index(j))
             break
         break
@@ -136,14 +136,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     nb = len(self.conf.billes)-1
     self.label_7.setText(str(nb+1) + " billes")
 
-# <<<<<<< HEAD
 
-#     tmp = bil(self,params=self.conf.billes[nb].getDescription())
-#     #tmp.modif.connect(self.modifyBille)
-# =======
     tmp = bil(self,params=self.conf.billes[nb].getDescription())
     tmp.deriv.connect(self.modifBille)
-# >>>>>>> d3cfcea654e35549d9b9e2483936c91bcb9959f9
     self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
 
     self.lineEdit_5.setText("")
@@ -155,13 +150,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     self.lineEdit_4.setText("")
 
   def modifBille(self,num):
-    for i in range(len(self.verticalLayout_5.count())):
-      if verticalLayout_5.itemAt(i).num == k :
+    for i in range(self.verticalLayout_5.count()):
+      if str(self.verticalLayout_5.itemAt(i).widget().num) == str(k) :
         for j in self.conf.produits:
-          if j.num == k
+          if j.num == k :
             c = self.conf.produits.pop(self.conf.produits.index(j))
             break
-        selectedItem = self.verticalLayout_5.takeAt(i)
+        selectedItem = self.verticalLayout_5.takeAt(i).widget()
         self.lineEdit_3.setText(selectedItem.taille.text())
         self.lineEdit_4.setText(selectedItem.eq.text())
         self.lineEdit_5.setText(c.conc[0])
@@ -169,6 +164,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_7.setText(c.conc[2])
         self.lineEdit_8.setText(c.conc[3])
         self.lineEdit_9.setText(c.conc[4])
+        selectedItem.deleteLater()
         break
 
 def mapAlphabet(k):
