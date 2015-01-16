@@ -9,6 +9,7 @@ from PySide.QtGui import *
 from PySide.QtCore import *
 from entrée_données import Ui_MainWindow
 from ok import Ui_GroupBox
+from bil import Ui_GroupBox as Ui_bil 
 
  
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -81,9 +82,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if i.num == k:
          self.lineEdit.setText(i.diffusivity)
          self.lineEdit_2.setText(i.decay)
-         self.verticalLayout_2.takeAt(k)
+         c = self.verticalLayout_2.takeAt(k)
          del i
          break
+      c.widget().deleteLater()
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
@@ -91,7 +93,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     nb = len(self.conf.billes)-1
 
 
-    tmp = ok(self,params=self.conf.billes[nb].getDescription())
+    tmp = bil(self,params=self.conf.billes[nb].getDescription())
     #tmp.modif.connect(self.modifyBille)
     self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
     self.label_7.setText(str(nb+1) + " billes")
@@ -123,7 +125,7 @@ class ok(QGroupBox, Ui_GroupBox):
     self.modif.emit(int(self.num))
 
 
-class bil(QGroupBox, Ui_GroupBox):
+class bil(QGroupBox, Ui_bil):
 
   deriv = Signal(int)
 
@@ -134,7 +136,7 @@ class bil(QGroupBox, Ui_GroupBox):
     self.taille.setText(params[1])
     self.eq.setText(params[2])
     self.conc.setText(params[3])
-    self.toolButton.clicked.connect(self.c)
+    self.der.clicked.connect(self.c)
 
   def c(self):
     self.deriv.emit(int(self.num))

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'entrée_données.ui'
 #
-# Created: Mon Jan 12 12:09:43 2015
+# Created: Fri Jan 16 08:18:28 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -243,7 +243,7 @@ class Ui_MainWindow(object):
         self.groupBox_7.setTitle("")
         self.groupBox_7.setObjectName("groupBox_7")
         self.verticalLayoutWidget_4 = QtGui.QWidget(self.groupBox_7)
-        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(40, 30, 181, 391))
+        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(20, 20, 221, 391))
         self.verticalLayoutWidget_4.setObjectName("verticalLayoutWidget_4")
         self.verticalLayout_5 = QtGui.QVBoxLayout(self.verticalLayoutWidget_4)
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
