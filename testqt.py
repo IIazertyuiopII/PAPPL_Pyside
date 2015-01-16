@@ -31,35 +31,66 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def save(self):
 
-    string, _  = QFileDialog().getOpenFileName(self, 'Sauvegarder fichier', '~')
+    string, _  = QFileDialog().getSaveFileName(self, 'Sauvegarder fichier', '~')
 
-    with open(string,rwb) as dump:
-      if os.path.isfile(string):
-        if pickle.load(string).name != self.conf.name:
-          error = "fichier deja existant, ecraser ?"
-          return
+    if not string:
+      return
+
+    if os.path.isfile(string):
+      with open(string,'rb') as dumpRead:
+        temp = pickle.load(dumpRead)
+        if temp.name != self.conf.name:
+          msgBox = QMessageBox()
+          msgBox.setText("Save")
+          msgBox.setInformativeText("Fichier deja existant, ecraser ?")
+          msgBox.setStandardButtons(QMessageBox.Save | QMessageBox.Cancel)
+          msgBox.setDefaultButton(QMessageBox.Save)
+          ret = msgBox.exec_()
+          dumpRead.close() #Automatiquement liberé après le with, mais bon
+
+          if ret == QMessageBox.Cancel:
+              return
+
+    with open(string,'wb') as dump:
+      self.conf.name = string
       pickle.dump(self.conf, dump)
 
   def load(self):
 
       string, _  = QFileDialog().getOpenFileName(self, 'Ouvrir fichier', '~')
+
       if not string:
         return
-      c1 = copy.deepcopy(self.conf)
-      try:
-        self.conf=pickle.load(string)
-      except (pickle.UnpicklingError,ValueError) as err :
-        if 'c1' in locals():
-          self.conf = c1
-        error = err
-      if type(self.conf) != Configuration:
-        err = "Fichier incompatible"
-      del self.conf
-      #Si tout va bien on affiche
 
-  def textchange(self):
-  		print("textchanged")
-  		print(self.lineEdit.text())
+      try:
+        loaded=pickle.load(string)
+        if type(loaded) == Configuration :
+          self.conf = loaded
+          self.displayConf()
+        else:
+          raise ValueError
+
+      except (pickle.UnpicklingError,ValueError):
+        QMessageBox.critical(self, "Fichier incompatible ou corrompu.", Dialog.MESSAGE, QMessageBox.ok)
+
+  def displayConf(self):
+    a,b,c = self.conf.opt.nombrePas, self.conf.opt.sizeArena, self.conf.opt.OneEveryN
+    self.spinBox.setValue(a)
+    self.spinBox_2.setValue(b)
+    self.spinBox_3.setValue(c)
+    #Comme setValue va emettre valueChange et écraser opt, on sauvegarde d'abords les values
+
+    for i in range(int(self.verticalLayout_2.count())):
+      self.verticalLayout_2.takeAt(0)
+
+    for i in self.conf.produits:
+      self.addProduct(i)
+
+    for i in range(int(self.verticalLayout_5.count())):
+      self.verticalLayout_5.takeAt(0)
+
+    for i in self.conf.billes:
+      self.addProduct(i)
 
   def majOptions(self):
       self.conf.opt = beads.Option(self.spinBox.value(),self.spinBox_2.value(),self.spinBox_3.value())
@@ -78,25 +109,67 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def modifyProduct(self,k):
 
-      for i in self.conf.produits :
-        if i.num == k:
-         self.lineEdit.setText(i.diffusivity)
-         self.lineEdit_2.setText(i.decay)
-         c = self.verticalLayout_2.takeAt(k)
-         del i
-         break
-      c.widget().deleteLater()
+# <<<<<<< HEAD
+#       for i in self.conf.produits :
+#         if i.num == k:
+#          self.lineEdit.setText(i.diffusivity)
+#          self.lineEdit_2.setText(i.decay)
+#          c = self.verticalLayout_2.takeAt(k)
+#          del i
+#          break
+#       c.widget().deleteLater()
+# =======
+    for i in range(len(self.verticalLayout_2.count())):
+      if verticalLayout_2.itemAt(i).num == k :
+        selectedItem = self.verticalLayout_2.takeAt(i)
+        self.lineEdit.setText(selectedItem.label_3.text())
+        self.lineEdit_2.setText(selectedItem.label_2.text())
+        for j in self.conf.produits:
+          if j.num == k
+            self.conf.produits.pop(self.conf.produits.index(j))
+            break
+        break
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
     self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
     nb = len(self.conf.billes)-1
-
-
-    tmp = bil(self,params=self.conf.billes[nb].getDescription())
-    #tmp.modif.connect(self.modifyBille)
-    self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
     self.label_7.setText(str(nb+1) + " billes")
+
+# <<<<<<< HEAD
+
+#     tmp = bil(self,params=self.conf.billes[nb].getDescription())
+#     #tmp.modif.connect(self.modifyBille)
+# =======
+    tmp = bil(self,params=self.conf.billes[nb].getDescription())
+    tmp.deriv.connect(self.modifBille)
+# >>>>>>> d3cfcea654e35549d9b9e2483936c91bcb9959f9
+    self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
+
+    self.lineEdit_5.setText("")
+    self.lineEdit_6.setText("")
+    self.lineEdit_7.setText("")
+    self.lineEdit_8.setText("")
+    self.lineEdit_9.setText("")
+    self.lineEdit_3.setText("")
+    self.lineEdit_4.setText("")
+
+  def modifBille(self,num):
+    for i in range(len(self.verticalLayout_5.count())):
+      if verticalLayout_5.itemAt(i).num == k :
+        for j in self.conf.produits:
+          if j.num == k
+            c = self.conf.produits.pop(self.conf.produits.index(j))
+            break
+        selectedItem = self.verticalLayout_5.takeAt(i)
+        self.lineEdit_3.setText(selectedItem.taille.text())
+        self.lineEdit_4.setText(selectedItem.eq.text())
+        self.lineEdit_5.setText(c.conc[0])
+        self.lineEdit_6.setText(c.conc[1])
+        self.lineEdit_7.setText(c.conc[2])
+        self.lineEdit_8.setText(c.conc[3])
+        self.lineEdit_9.setText(c.conc[4])
+        break
 
 def mapAlphabet(k):
 
