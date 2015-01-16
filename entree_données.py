@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'entrée_données.ui'
+# Form implementation generated from reading ui file 'entree_données.ui'
 #
-# Created: Fri Jan 16 09:39:54 2015
-#      by: pyside-uic 0.2.15 running on PySide 1.2.2
+# Created: Fri Jan 16 09:46:19 2015
+#      by: pyside-uic 0.2.13 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
 
