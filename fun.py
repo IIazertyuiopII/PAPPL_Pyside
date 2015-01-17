@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'fun.ui'
 #
-# Created: Sat Jan 17 21:21:42 2015
-#      by: pyside-uic 0.2.13 running on PySide 1.2.2
+# Created: Sat Jan 17 21:22:31 2015
+#      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
 

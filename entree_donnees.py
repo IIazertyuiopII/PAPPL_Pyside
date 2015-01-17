@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'entree_donnees.ui'
 #
-# Created: Sat Jan 17 21:21:43 2015
-#      by: pyside-uic 0.2.13 running on PySide 1.2.2
+# Created: Sat Jan 17 21:22:30 2015
+#      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -25,6 +25,10 @@ class Ui_MainWindow(object):
 "    border-bottom-width : 20px;\n"
 "    border-bottom-width : 20px;    \n"
 "    border-radius : 0px;\n"
+<<<<<<< HEAD
+=======
+"    background : #eee;\n"
+>>>>>>> 9206368b0cf627d2b847ae27c662df067ed47a47
 "\n"
 "}\n"
 "\n"
@@ -205,6 +209,11 @@ class Ui_MainWindow(object):
         self.spinBox_2.setObjectName("spinBox_2")
         self.label_8 = QtGui.QLabel(self.groupBox)
         self.label_8.setGeometry(QtCore.QRect(290, 40, 171, 20))
+<<<<<<< HEAD
+=======
+        self.label_8.setToolTip("")
+        self.label_8.setToolTipDuration(10)
+>>>>>>> 9206368b0cf627d2b847ae27c662df067ed47a47
         self.label_8.setObjectName("label_8")
         self.spinBox_3 = QtGui.QSpinBox(self.groupBox)
         self.spinBox_3.setGeometry(QtCore.QRect(470, 40, 85, 24))
@@ -360,7 +369,10 @@ class Ui_MainWindow(object):
         self.groupBox.setTitle(QtGui.QApplication.translate("MainWindow", "Simulation parameters", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("MainWindow", "step number :", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("MainWindow", "Arena size :", None, QtGui.QApplication.UnicodeUTF8))
+<<<<<<< HEAD
         self.label_8.setToolTip(QtGui.QApplication.translate("MainWindow", "Calculate one frame every N computed iterations", None, QtGui.QApplication.UnicodeUTF8))
+=======
+>>>>>>> 9206368b0cf627d2b847ae27c662df067ed47a47
         self.label_8.setText(QtGui.QApplication.translate("MainWindow", "One picture every :", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_2.setTitle(QtGui.QApplication.translate("MainWindow", "Actions", None, QtGui.QApplication.UnicodeUTF8))
         self.b_charger.setText(QtGui.QApplication.translate("MainWindow", "Load", None, QtGui.QApplication.UnicodeUTF8))

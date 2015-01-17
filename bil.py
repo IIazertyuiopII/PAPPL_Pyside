@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file 'bil.ui'
 #
-# Created: Sat Jan 17 21:21:43 2015
-#      by: pyside-uic 0.2.13 running on PySide 1.2.2
+#      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -16,13 +15,14 @@ class Ui_GroupBox(object):
         GroupBox.setStyleSheet("#GroupBox{\n"
 "\n"
 "    border-style : none;    \n"
+"    border-bottom : 2px solid blue;\n"
 "\n"
 "}\n"
 "\n"
 "#groupBox{\n"
 "\n"
-"    border : 1px solid black;\n"
 "    border-radius : 0px;\n"
+"    background : #eee;\n"
 "\n"
 "}\n"
 "\n"
@@ -68,7 +68,7 @@ class Ui_GroupBox(object):
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.der = QtGui.QToolButton(self.groupBox)
-        self.der.setGeometry(QtCore.QRect(1, 3, 30, 30))
+        self.der.setGeometry(QtCore.QRect(2, 3, 30, 30))
         self.der.setStyleSheet("#der {\n"
 "\n"
 "    border-image: url(res/del.png) 0 0 0 0 stretch stretch;\n"
@@ -86,7 +86,7 @@ class Ui_GroupBox(object):
         self.edit.setText("")
         self.edit.setObjectName("edit")
         self.copy = QtGui.QToolButton(self.groupBox)
-        self.copy.setGeometry(QtCore.QRect(160, 3, 30, 30))
+        self.copy.setGeometry(QtCore.QRect(159, 3, 30, 30))
         self.copy.setStyleSheet("#copy {\n"
 "\n"
 "    border-image: url(res/copy.png) 0 0 0 0 stretch stretch;\n"

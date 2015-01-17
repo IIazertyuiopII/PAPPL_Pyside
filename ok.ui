@@ -17,13 +17,14 @@
    <string notr="true">#GroupBox{
 
 	border-style : none;
+	border-bottom : 2px solid blue;
 
 }
 
 #groupBox{
 
-	border : 1px solid black;
 	border-radius : 0px;
+	background : #eee;
 
 }
 
@@ -103,7 +104,7 @@
    <widget class="QToolButton" name="toolButton">
     <property name="geometry">
      <rect>
-      <x>1</x>
+      <x>2</x>
       <y>3</y>
       <width>30</width>
       <height>30</height>
