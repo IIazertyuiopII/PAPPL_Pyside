@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'ok.ui'
 #
-# Created: Fri Jan 16 11:35:06 2015
-#      by: pyside-uic 0.2.13 running on PySide 1.2.2
+# Created: Sat Jan 17 21:04:57 2015
+#      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,13 +12,17 @@ from PySide import QtCore, QtGui
 class Ui_GroupBox(object):
     def setupUi(self, GroupBox):
         GroupBox.setObjectName("GroupBox")
-        GroupBox.resize(187, 50)
-        GroupBox.setStyleSheet(".QGroupBox{\n"
+        GroupBox.resize(231, 45)
+        GroupBox.setStyleSheet("#GroupBox{\n"
 "\n"
-"    color : white;\n"
-"    font-weight : 600;\n"
-"    border : 0px;\n"
-"    background-color : #00264a;\n"
+"    border-style : none;\n"
+"\n"
+"}\n"
+"\n"
+"#groupBox{\n"
+"\n"
+"    border : 1px solid black;\n"
+"    border-radius : 0px;\n"
 "\n"
 "}\n"
 "\n"
@@ -50,14 +54,28 @@ class Ui_GroupBox(object):
         self.label_3 = QtGui.QLabel(GroupBox)
         self.label_3.setGeometry(QtCore.QRect(55, 10, 41, 30))
         self.label_3.setObjectName("label_3")
-        self.toolButton = QtGui.QToolButton(GroupBox)
-        self.toolButton.setGeometry(QtCore.QRect(155, 15, 20, 20))
+        self.groupBox = QtGui.QGroupBox(GroupBox)
+        self.groupBox.setGeometry(QtCore.QRect(150, 7, 72, 36))
+        self.groupBox.setTitle("")
+        self.groupBox.setObjectName("groupBox")
+        self.toolButton = QtGui.QToolButton(self.groupBox)
+        self.toolButton.setGeometry(QtCore.QRect(1, 3, 30, 30))
         self.toolButton.setStyleSheet("#toolButton {\n"
 "\n"
-"    border-image: url(res/bite.png) 0 0 0 0 stretch stretch;\n"
+"    border-image: url(res/del.png) 0 0 0 0 stretch stretch;\n"
 "\n"
 "}")
+        self.toolButton.setText("")
         self.toolButton.setObjectName("toolButton")
+        self.toolButton_2 = QtGui.QToolButton(self.groupBox)
+        self.toolButton_2.setGeometry(QtCore.QRect(40, 3, 30, 30))
+        self.toolButton_2.setStyleSheet("#toolButton_2 {\n"
+"\n"
+"    border-image: url(res/edit.png) 0 0 0 0 stretch stretch;\n"
+"\n"
+"}")
+        self.toolButton_2.setText("")
+        self.toolButton_2.setObjectName("toolButton_2")
 
         self.retranslateUi(GroupBox)
         QtCore.QMetaObject.connectSlotsByName(GroupBox)
@@ -67,5 +85,4 @@ class Ui_GroupBox(object):
         self.label.setText(QtGui.QApplication.translate("GroupBox", "A : ", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("GroupBox", "0.0000", None, QtGui.QApplication.UnicodeUTF8))
         self.label_3.setText(QtGui.QApplication.translate("GroupBox", "0.000", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolButton.setText(QtGui.QApplication.translate("GroupBox", "...", None, QtGui.QApplication.UnicodeUTF8))
 

@@ -6,20 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>187</width>
-    <height>50</height>
+    <width>231</width>
+    <height>45</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>GroupBox</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">.QGroupBox{
+   <string notr="true">#GroupBox{
 
-	color : white;
-	font-weight : 600;
-    border : 0px;
-    background-color : #00264a;
+	border-style : none;
+
+}
+
+#groupBox{
+
+	border : 1px solid black;
+	border-radius : 0px;
 
 }
 
@@ -84,25 +88,58 @@
     <string>0.000</string>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButton">
+  <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>155</x>
-     <y>15</y>
-     <width>20</width>
-     <height>20</height>
+     <x>150</x>
+     <y>7</y>
+     <width>72</width>
+     <height>36</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">#toolButton {
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QToolButton" name="toolButton">
+    <property name="geometry">
+     <rect>
+      <x>1</x>
+      <y>3</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#toolButton {
 
-	border-image: url(res/bite.png) 0 0 0 0 stretch stretch;
+	border-image: url(res/del.png) 0 0 0 0 stretch stretch;
 
 }</string>
-   </property>
-   <property name="text">
-    <string>...</string>
-   </property>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>3</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#toolButton_2 {
+
+	border-image: url(res/edit.png) 0 0 0 0 stretch stretch;
+
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
