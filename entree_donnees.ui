@@ -207,7 +207,7 @@ QWidget {
      </rect>
     </property>
     <property name="text">
-     <string> Partie produits</string>
+     <string>Products</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -215,12 +215,12 @@ QWidget {
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>160</width>
+      <width>191</width>
       <height>30</height>
      </rect>
     </property>
     <property name="text">
-     <string> Partie générale</string>
+     <string>Global parameters</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -233,7 +233,7 @@ QWidget {
      </rect>
     </property>
     <property name="text">
-     <string> Partie billes</string>
+     <string>Beads</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
@@ -278,7 +278,7 @@ QWidget {
      </rect>
     </property>
     <property name="text">
-     <string>Créer</string>
+     <string>Create</string>
     </property>
    </widget>
    <widget class="QToolButton" name="b_charger_4">
@@ -291,7 +291,7 @@ QWidget {
      </rect>
     </property>
     <property name="text">
-     <string>Créer</string>
+     <string>Create</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_3">
@@ -319,7 +319,7 @@ QWidget {
       <string notr="true"/>
      </property>
      <property name="title">
-      <string>Paramètres généraux</string>
+      <string>Simulation parameters</string>
      </property>
      <widget class="QLabel" name="label">
       <property name="geometry">
@@ -330,8 +330,11 @@ QWidget {
         <height>20</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string extracomment="Number of step to be computed"/>
+      </property>
       <property name="text">
-       <string>Nombre de pas :</string>
+       <string>step number :</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
@@ -343,8 +346,11 @@ QWidget {
         <height>20</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string extracomment="Register the Arena size (assumed to be a square) in mm"/>
+      </property>
       <property name="text">
-       <string>Taille de l'arène :</string>
+       <string>Arena size :</string>
       </property>
      </widget>
      <widget class="QSpinBox" name="spinBox">
@@ -394,8 +400,14 @@ QWidget {
         <height>20</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string extracomment="Calculate one frame every N computed iterations"/>
+      </property>
+      <property name="toolTipDuration">
+       <number>10</number>
+      </property>
       <property name="text">
-       <string>Calculer une image sur :</string>
+       <string>One picture every :</string>
       </property>
      </widget>
      <widget class="QSpinBox" name="spinBox_3">
@@ -443,14 +455,14 @@ QWidget {
        <item>
         <widget class="QToolButton" name="b_charger">
          <property name="text">
-          <string>Charger</string>
+          <string>Load</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QToolButton" name="b_sauver">
          <property name="text">
-          <string>Sauver</string>
+          <string>Save</string>
          </property>
         </widget>
        </item>
@@ -573,8 +585,11 @@ QWidget {
         <height>20</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string extracomment="Speed a which a product move in the arena (mm/s)"/>
+      </property>
       <property name="text">
-       <string>Diffusivité :</string>
+       <string>Diffusivity :</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_9">
@@ -585,6 +600,9 @@ QWidget {
         <width>131</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string extracomment="Speed at which the product is destroyed ( s^-1)"/>
       </property>
       <property name="text">
        <string>Decay :</string>
@@ -645,8 +663,11 @@ QWidget {
         <height>20</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string extracomment="Register how many beads with that configuration will be created"/>
+      </property>
       <property name="text">
-       <string>Exemplaires :</string>
+       <string>Count :</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_12">
@@ -657,6 +678,9 @@ QWidget {
         <width>131</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string extracomment="Form A = A + A + B"/>
       </property>
       <property name="text">
        <string>Equation :</string>
@@ -700,6 +724,9 @@ QWidget {
         <width>131</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string extracomment="Initial concentration at beads position"/>
       </property>
       <property name="text">
        <string>Concentrations :</string>
@@ -819,8 +846,11 @@ QWidget {
         <height>20</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string extracomment="Beads diameter (mm)"/>
+      </property>
       <property name="text">
-       <string>Taille :</string>
+       <string>Size :</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_10">
