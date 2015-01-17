@@ -2,13 +2,8 @@
 
 # Form implementation generated from reading ui file 'ok.ui'
 #
-<<<<<<< HEAD
-# Created: Sat Jan 17 21:01:17 2015
+# Created: Sat Jan 17 21:03:46 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
-=======
-# Created: Fri Jan 16 11:35:06 2015
-#      by: pyside-uic 0.2.13 running on PySide 1.2.2
->>>>>>> 3415fe2466ddec054d7a17b0ba2d0b0892456c6c
 #
 # WARNING! All changes made in this file will be lost!
 
