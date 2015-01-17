@@ -3,8 +3,8 @@ import os;
 import subprocess;
 
 listedir = os.listdir(".")
-uilist = [i for i in listedir if ".ui" in i]
-reslist = [j for j in listedir if ".qrc" in j]
+uilist = [i for i in listedir if i[-2]==".ui"]
+reslist = [j for j in listedir if j[-2]==".qrc"]
 
 
 for i in uilist :
