@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'entree_donnees.ui'
 #
-# Created: Sat Jan 17 21:04:56 2015
+# Created: Sat Jan 17 21:15:38 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -25,6 +25,7 @@ class Ui_MainWindow(object):
 "    border-bottom-width : 20px;\n"
 "    border-bottom-width : 20px;    \n"
 "    border-radius : 0px;\n"
+"    background : #eee;\n"
 "\n"
 "}\n"
 "\n"
