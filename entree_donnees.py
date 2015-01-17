@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'entrée_données.ui'
+# Form implementation generated from reading ui file 'entree_donnees.ui'
 #
-# Created: Fri Jan 16 09:39:54 2015
+# Created: Sat Jan 17 20:57:50 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -230,26 +230,23 @@ class Ui_MainWindow(object):
         self.groupBox_6.setTitle("")
         self.groupBox_6.setObjectName("groupBox_6")
         self.verticalLayoutWidget = QtGui.QWidget(self.groupBox_6)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(40, 30, 189, 391))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 231, 411))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout_2 = QtGui.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout_2.setSizeConstraint(QtGui.QLayout.SetMinimumSize)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        spacerItem = QtGui.QSpacerItem(187, 100, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
-        self.verticalLayout_2.addItem(spacerItem)
         self.groupBox_7 = QtGui.QGroupBox(self.centralwidget)
-        self.groupBox_7.setGeometry(QtCore.QRect(1300, 250, 256, 441))
+        self.groupBox_7.setGeometry(QtCore.QRect(1300, 250, 256, 571))
         self.groupBox_7.setTitle("")
         self.groupBox_7.setObjectName("groupBox_7")
         self.verticalLayoutWidget_4 = QtGui.QWidget(self.groupBox_7)
-        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(20, 20, 221, 391))
+        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(10, 10, 231, 541))
         self.verticalLayoutWidget_4.setObjectName("verticalLayoutWidget_4")
         self.verticalLayout_5 = QtGui.QVBoxLayout(self.verticalLayoutWidget_4)
+        self.verticalLayout_5.setSizeConstraint(QtGui.QLayout.SetMinimumSize)
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        spacerItem1 = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
-        self.verticalLayout_5.addItem(spacerItem1)
         self.groupBox_8 = QtGui.QGroupBox(self.centralwidget)
         self.groupBox_8.setGeometry(QtCore.QRect(20, 260, 331, 401))
         self.groupBox_8.setTitle("")

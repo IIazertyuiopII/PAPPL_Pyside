@@ -473,32 +473,16 @@ QWidget {
     <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>30</y>
-       <width>189</width>
-       <height>391</height>
+       <x>10</x>
+       <y>10</y>
+       <width>231</width>
+       <height>411</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <property name="sizeConstraint">
        <enum>QLayout::SetMinimumSize</enum>
       </property>
-      <item>
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>187</width>
-          <height>100</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
      </layout>
     </widget>
    </widget>
@@ -508,7 +492,7 @@ QWidget {
       <x>1300</x>
       <y>250</y>
       <width>256</width>
-      <height>441</height>
+      <height>571</height>
      </rect>
     </property>
     <property name="title">
@@ -517,26 +501,16 @@ QWidget {
     <widget class="QWidget" name="verticalLayoutWidget_4">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>221</width>
-       <height>391</height>
+       <x>10</x>
+       <y>10</y>
+       <width>231</width>
+       <height>541</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
-      <item>
-       <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
      </layout>
     </widget>
    </widget>

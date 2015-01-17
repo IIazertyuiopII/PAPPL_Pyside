@@ -20,6 +20,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.conf = beads.Configuration("default")
 
+        self.verticalLayout_2.setContentsMargins(0,0,0,0)
+
         self.b_charger_2.clicked.connect(self.addProduct)
         self.b_charger_4.clicked.connect(self.addBille)
         self.spinBox.valueChanged.connect(self.majOptions)
