@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'bil.ui'
 #
-# Created: Sat Jan 17 20:57:50 2015
+# Created: Sat Jan 17 21:01:15 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,7 +12,7 @@ from PySide import QtCore, QtGui
 class Ui_GroupBox(object):
     def setupUi(self, GroupBox):
         GroupBox.setObjectName("GroupBox")
-        GroupBox.resize(231, 210)
+        GroupBox.resize(231, 148)
         GroupBox.setStyleSheet("#GroupBox{\n"
 "\n"
 "    border-style : none;    \n"

@@ -34,7 +34,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def save(self):
 
-    string, _  = QFileDialog().getSaveFileName(self, 'Sauvegarder fichier', '~')
+    string, _  = QFileDialog().getSaveFileName(self, 'Save file', '')
 
     if not string:
       return
@@ -60,7 +60,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def load(self):
 
-      string, _  = QFileDialog().getOpenFileName(self, 'Ouvrir fichier', '~')
+      string, _  = QFileDialog().getOpenFileName(self, 'Open file', '')
 
 
       if not string:
@@ -70,14 +70,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
       try:
         loaded=pickle.load(string)
-        if type(loaded) == beads.Configuration :
-          self.conf = loaded
-          self.displayConf()
-        else:
-          raise ValueError
+        print(type(loaded))
+        # if type(loaded) == beads.Configuration :
+        self.conf = loaded
+        self.displayConf()
+         #else:
+         #  raise ValueError
 
       except (pickle.UnpicklingError,ValueError):
-        QMessageBox.critical(self, "Fichier incompatible ou corrompu.", Dialog.MESSAGE, QMessageBox.ok)
+        c=QMessageBox(self)
+        c.setText("Fichier incompatible ou corrompu.")
+        c.exec_()
 
   def displayConf(self):
     a,b,c = self.conf.opt.nombrePas, self.conf.opt.sizeArena, self.conf.opt.OneEveryN
@@ -90,13 +93,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       self.verticalLayout_2.takeAt(0)
 
     for i in self.conf.produits:
-      self.addProduct()
+      tmp = ok(self,params=i.getDescription())
+      tmp.modif.connect(self.modifyProduct)
+      self.verticalLayout_2.insertWidget(0,tmp,stretch=1)
+
+    np = len(self.conf.produits)
+    self.label_3.setText(str(np+1) + " Products")
 
     for i in range(int(self.verticalLayout_5.count())):
       self.verticalLayout_5.takeAt(0)
 
     for i in self.conf.billes:
-      self.addProduct(i)
+      tmp = bil(self,params=i.getDescription())
+      tmp.modif.connect(self.modifBille)
+      self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
+
+    np = len(self.conf.billes)
+    self.label_7.setText(str(np+1) + " Products")
 
   def majOptions(self):
       self.conf.opt = beads.Option(self.spinBox.value(),self.spinBox_2.value(),self.spinBox_3.value())
@@ -104,7 +117,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
   def addProduct(self):
       self.conf.produits.append(beads.Produit(self.lineEdit.text(),self.lineEdit_2.text()))
       np = len(self.conf.produits)-1
-      self.label_3.setText(str(np+1) + " Produits")
+      self.label_3.setText(str(np+1) + " Products")
 
       tmp = ok(self,params=self.conf.produits[np].getDescription())
       tmp.modif.connect(self.modifyProduct)
@@ -136,7 +149,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
     self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
     nb = len(self.conf.billes)-1
-    self.label_7.setText(str(nb+1) + " billes")
+    self.label_7.setText(str(nb+1) + " Beads")
 
 
     tmp = bil(self,params=self.conf.billes[nb].getDescription())
@@ -153,6 +166,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def modifBille(self,num):
     for i in range(self.verticalLayout_5.count()):
+      if(type(self.verticalLayout_2.itemAt(i))==QSpacerItem) :
+        continue
+
       if str(self.verticalLayout_5.itemAt(i).widget().num) == str(k) :
         for j in self.conf.produits:
           if j.num == k :
@@ -176,7 +192,7 @@ def mapAlphabet(k):
   if k in c:
     return c[k]
   else:
-    return 'erreur'
+    return 'error'
 
 
 class ok(QGroupBox, Ui_GroupBox):
