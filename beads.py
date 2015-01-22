@@ -3,16 +3,22 @@ import os
 import copy
 
 class Produit:
-	id = 0
+	nm = []
 	def __init__(self,conc):
-		self.num = Produit.id
 		self.diffusivity = conc[0]
 		self.decay = conc[1]
-		Produit.id += 1
+		self.num = 0
+		while self.num in Produit.nm:
+			self.num += 1
+		Produit.nm.append(self.num)
+		print(self.num)
 	def getDescription(self):
 		return [str(self.num),str(self.diffusivity),str(self.decay)]
 	def __str__(self):
 		return "Produit " + str(self.num) + " Df : " + str(self.diffusivity) + "Dc : " + str(self.decay)
+
+	def __del__(self):
+		Produit.nm.remove(self.num)
 
 class Bille:
 	id = 0 
