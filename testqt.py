@@ -199,7 +199,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     con.extend([self.lineEdit_3.text(),self.lineEdit_4.text()])
     if(checkOneParamMissing(con)==False) :
 
-      self.conf.billes.append(beads.Bille(self.lineEdit_10.text(),self.lineEdit_4.text(),self.lineEdit_3.text(),conc))
+      self.conf.billes.append(beads.Bille(self.lineEdit_4.text(),self.lineEdit_10.text(),self.lineEdit_3.text(),conc))
       nb = len(self.conf.billes)-1
       self.label_7.setText(str(nb+1) + " Beads")
 
@@ -354,11 +354,11 @@ class bil(QGroupBox, Ui_bil):
     self.number.setText(params[3])
     self.taille.setText(params[1])
     self.eq.setText(params[2])
-    tmp = ""
-    for i in range(len(params[4])):
-      tmp += mapAlphabet(i)+" : "+ str(params[4][i])
-      print(mapAlphabet(i)+" : "+ str(params[4][i]))
-    self.conc.setText(tmp)
+  #  tmp = ""
+  #  for i in range(len(params[4])):
+  #    tmp += mapAlphabet(i)+" : "+ str(params[4][i])
+  #    print(mapAlphabet(i)+" : "+ str(params[4][i]))
+    self.conc.setText(params[4])
     self.der.clicked.connect(self.c)
     self.edit.clicked.connect(self.e)
     self.copy.clicked.connect(self.d)
