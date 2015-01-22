@@ -92,6 +92,10 @@ class Ui_GroupBox(object):
     def retranslateUi(self, GroupBox):
         GroupBox.setWindowTitle(QtGui.QApplication.translate("GroupBox", "GroupBox", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("GroupBox", "A : ", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setToolTip(QtGui.QApplication.translate("GroupBox", "Decay", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("GroupBox", "0.0000", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_3.setToolTip(QtGui.QApplication.translate("GroupBox", "Diffusivity", None, QtGui.QApplication.UnicodeUTF8))
         self.label_3.setText(QtGui.QApplication.translate("GroupBox", "0.000", None, QtGui.QApplication.UnicodeUTF8))
+        self.toolButton.setToolTip(QtGui.QApplication.translate("GroupBox", "Delete", None, QtGui.QApplication.UnicodeUTF8))
+        self.toolButton_2.setToolTip(QtGui.QApplication.translate("GroupBox", "Edit", None, QtGui.QApplication.UnicodeUTF8))
 

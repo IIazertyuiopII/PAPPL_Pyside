@@ -109,6 +109,9 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Equation</string>
+   </property>
    <property name="text">
     <string>TextLabel</string>
    </property>
@@ -121,6 +124,9 @@
      <width>221</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>Concentration</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -173,6 +179,9 @@
       <height>30</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>delete</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">#der {
 
@@ -193,6 +202,9 @@
       <height>30</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>edit</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">#edit {
 
@@ -212,6 +224,9 @@
       <width>30</width>
       <height>30</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>copy</string>
     </property>
     <property name="styleSheet">
      <string notr="true">#copy {

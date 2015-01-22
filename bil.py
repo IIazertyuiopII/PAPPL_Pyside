@@ -2,9 +2,14 @@
 
 # Form implementation generated from reading ui file 'bil.ui'
 #
+<<<<<<< HEAD
 # Created: Thu Jan 22 19:57:27 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
+=======
+# Created: Thu Jan 22 18:46:31 2015
+#      by: pyside-uic 0.2.13 running on PySide 1.2.2
+>>>>>>> 331f646a66e62f691e605bb5aebab3e5097a1c38
 # WARNING! All changes made in this file will be lost!
 
 from PySide import QtCore, QtGui
@@ -111,8 +116,13 @@ class Ui_GroupBox(object):
         GroupBox.setWindowTitle(QtGui.QApplication.translate("GroupBox", "GroupBox", None, QtGui.QApplication.UnicodeUTF8))
         self.label_4.setText(QtGui.QApplication.translate("GroupBox", "Taille :", None, QtGui.QApplication.UnicodeUTF8))
         self.label_6.setText(QtGui.QApplication.translate("GroupBox", "x", None, QtGui.QApplication.UnicodeUTF8))
+        self.eq.setToolTip(QtGui.QApplication.translate("GroupBox", "Equation", None, QtGui.QApplication.UnicodeUTF8))
         self.eq.setText(QtGui.QApplication.translate("GroupBox", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
+        self.conc.setToolTip(QtGui.QApplication.translate("GroupBox", "Concentration", None, QtGui.QApplication.UnicodeUTF8))
         self.conc.setText(QtGui.QApplication.translate("GroupBox", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.taille.setText(QtGui.QApplication.translate("GroupBox", "0.000", None, QtGui.QApplication.UnicodeUTF8))
         self.number.setText(QtGui.QApplication.translate("GroupBox", "0.000", None, QtGui.QApplication.UnicodeUTF8))
+        self.der.setToolTip(QtGui.QApplication.translate("GroupBox", "delete", None, QtGui.QApplication.UnicodeUTF8))
+        self.edit.setToolTip(QtGui.QApplication.translate("GroupBox", "edit", None, QtGui.QApplication.UnicodeUTF8))
+        self.copy.setToolTip(QtGui.QApplication.translate("GroupBox", "copy", None, QtGui.QApplication.UnicodeUTF8))
 

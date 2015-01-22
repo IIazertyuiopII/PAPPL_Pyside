@@ -354,7 +354,11 @@ class bil(QGroupBox, Ui_bil):
     self.number.setText(params[3])
     self.taille.setText(params[1])
     self.eq.setText(params[2])
-    self.conc.setText(params[4])
+    tmp = ""
+    for i in range(len(params[4])):
+      tmp += mapAlphabet(i)+" : "+ str(params[4][i])
+      print(mapAlphabet(i)+" : "+ str(params[4][i]))
+    self.conc.setText(tmp)
     self.der.clicked.connect(self.c)
     self.edit.clicked.connect(self.e)
     self.copy.clicked.connect(self.d)
