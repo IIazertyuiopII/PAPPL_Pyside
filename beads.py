@@ -28,9 +28,9 @@ class Bille:
 		self.conc = conc
 		self.count = count
 		self.num = 0
-		while self.num in Produit.nm:
+		while self.num in Bille.nm:
 			self.num += 1
-		Produit.nm.append(self.num)	
+		Bille.nm.append(self.num)	
 	def parseur(self):
 		pass
 	def getEquation(self):

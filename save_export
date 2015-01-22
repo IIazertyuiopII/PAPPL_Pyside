@@ -1,0 +1,9 @@
+Diffusivity_Beads 10
+Diffusivity_Chemi 10
+Decay_k 10
+BeadSize 0.1
+TotalSteps 10000
+NumProd 2
+sx 50
+sy 50
+world save_export_world

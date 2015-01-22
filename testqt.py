@@ -38,6 +38,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     if not string:
       return
 
+    self.export("save")
+
     # if os.path.isfile(string):
     #   with open(string,'rb') as dumpRead:
     #     temp = pickle.load(dumpRead)
@@ -56,6 +58,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     with open(string,'wb') as dump:
       self.conf.name = string
       pickle.dump(self.conf, dump)
+
+  def export(self,name):
+    exp = open(name+"_export",'w')
+    exp.write("Diffusivity_Beads " + str(self.conf.produits[0].diffusivity)+"\n")
+    exp.write("Diffusivity_Chemi " + str(self.conf.produits[0].diffusivity)+"\n")
+    exp.write("Decay_k " + str(self.conf.produits[0].decay)+"\n")
+    exp.write("BeadSize " + str(self.conf.billes[0].size)+"\n")
+    exp.write("TotalSteps " + str(self.conf.opt.nombrePas)+"\n")
+    exp.write("NumProd " + str(len(self.conf.produits) )+"\n")
+    exp.write("sx " + str(self.conf.opt.sizeArena)+"\n")
+    exp.write("sy " + str(self.conf.opt.sizeArena)+"\n")
+    exp.write("world "+name+"_export_world"+"\n")
+    exp.close
+    world = open(name+"_export_world",'w')
+    for j,i in enumerate(self.conf.billes):
+      world.write("ball " + str(j)+"\n")
+      world.write("rand "+"\n")
+      world.write(str(i.count)+"\n")
+      world.write(i.eq+"\n")
+      world.write("10 0"+"\n")
+      world.write(str(i.conc)+"\n")
+
+
 
   def load(self):
 
@@ -285,6 +310,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     self.findChild(QWidget,widget).setStyleSheet(stylesheet)
     #dkfjg
 
+def printTable(tl):
+  tmp = ""
+  for i in tl:
+    tmp += i
+    tmp += " "
+
 def mapAlphabet(k):
 
   k = int(k)
@@ -352,8 +383,8 @@ class bil(QGroupBox, Ui_bil):
     self.setupUi(self)
     self.num = params[0]
     self.number.setText(params[3])
-    self.taille.setText(params[1])
-    self.eq.setText(params[2])
+    self.taille.setText(params[2])
+    self.eq.setText(params[1])
   #  tmp = ""
   #  for i in range(len(params[4])):
   #    tmp += mapAlphabet(i)+" : "+ str(params[4][i])
