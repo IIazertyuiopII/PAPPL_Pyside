@@ -2,13 +2,8 @@
 
 # Form implementation generated from reading ui file 'entree_donnees.ui'
 #
-<<<<<<< HEAD
-# Created: Thu Jan 22 20:57:18 2015
+# Created: Thu Jan 22 21:14:27 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
-=======
-# Created: Thu Jan 22 20:06:26 2015
-#      by: pyside-uic 0.2.13 running on PySide 1.2.2
->>>>>>> db737b15545789cc301ed3e9f9746f3fe36e70d9
 #
 # WARNING! All changes made in this file will be lost!
 
