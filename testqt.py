@@ -314,7 +314,7 @@ class blink(QWidget):
     if n==0 :
       return
     else :
-      self.info.emit(widget.objectName(),"#"+widget.objectName()+" {border : 1px solid red;} ")
+      self.info.emit(widget.objectName(),"#"+widget.objectName()+" {border : 10px solid red;} ")
       time.sleep(0.5)
       self.info.emit(widget.objectName(),"#"+widget.objectName()+" {border : none;} ")
       time.sleep(0.5)
