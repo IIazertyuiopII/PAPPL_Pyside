@@ -20,8 +20,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.conf = beads.Configuration("default")
 
-        self.verticalLayout_2.setContentsMargins(0,0,0,0)
-
         self.b_charger_2.clicked.connect(self.addProduct)
         self.b_charger_4.clicked.connect(self.addBille)
         self.spinBox.valueChanged.connect(self.majOptions)
@@ -30,6 +28,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.b_charger.clicked.connect(self.load)
         self.b_sauver.clicked.connect(self.save)
+
+        self.initScrollAreas()
 
 
   def save(self):
@@ -111,20 +111,45 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     np = len(self.conf.billes)
     self.label_7.setText(str(np+1) + " Products")
 
+  def initScrollAreas(self):
+    self.scrollarea_1 = QScrollArea(self.groupBox_6)
+    scrollarea_1_widget = QWidget(self)
+    self.verticalLayout_2 = QVBoxLayout()
+    self.verticalLayout_2.setSizeConstraint(QLayout.SetMinAndMaxSize)
+    scrollarea_1_widget.setLayout(self.verticalLayout_2)
+    self.scrollarea_1.setWidgetResizable(True)
+    self.scrollarea_1.setWidget(scrollarea_1_widget)
+    self.scrollarea_1.setVisible(True)
+    self.scrollarea_1.resize(280,350)
+    self.scrollarea_1.setViewportMargins(10,10,10,20)
+
+    self.scrollarea_2 = QScrollArea(self.groupBox_7)
+    scrollarea_2_widget = QWidget(self)
+    self.verticalLayout_5 = QVBoxLayout()
+    self.verticalLayout_5.setSizeConstraint(QLayout.SetMinAndMaxSize)
+    scrollarea_2_widget.setLayout(self.verticalLayout_5)
+    self.scrollarea_2.setWidgetResizable(True)
+    self.scrollarea_2.setWidget(scrollarea_2_widget)
+    self.scrollarea_2.setVisible(True)
+    self.scrollarea_2.resize(285,571)
+    self.scrollarea_2.setViewportMargins(10,10,10,20)
+
   def majOptions(self):
       self.conf.opt = beads.Option(self.spinBox.value(),self.spinBox_2.value(),self.spinBox_3.value())
 
   def addProduct(self):
       self.conf.produits.append(beads.Produit(self.lineEdit.text(),self.lineEdit_2.text()))
       np = len(self.conf.produits)-1
-      self.label_3.setText(str(np+1) + " Products")
+      if(np<=5) :
+        self.label_3.setText(str(np+1) + " Products")
 
-      tmp = ok(self,params=self.conf.produits[np].getDescription())
-      tmp.modif.connect(self.modifyProduct)
-      self.verticalLayout_2.insertWidget(0,tmp,stretch=1)
+        tmp = ok(self,params=self.conf.produits[np].getDescription())
+        tmp.modif.connect(self.modifyProduct)
+        self.verticalLayout_2.insertWidget(0,tmp,stretch=1)
 
-      self.lineEdit.setText("")
-      self.lineEdit_2.setText("")
+        self.lineEdit.setText("")
+        self.lineEdit_2.setText("")
+
 
   def modifyProduct(self,k):
 
@@ -193,6 +218,7 @@ def mapAlphabet(k):
     return c[k]
   else:
     return 'error'
+
 
 
 class ok(QGroupBox, Ui_GroupBox):

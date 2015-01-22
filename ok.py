@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ok.ui'
 #
-# Created: Sat Jan 17 21:24:25 2015
+# Created: Thu Jan 22 13:55:04 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,7 +12,15 @@ from PySide import QtCore, QtGui
 class Ui_GroupBox(object):
     def setupUi(self, GroupBox):
         GroupBox.setObjectName("GroupBox")
-        GroupBox.resize(231, 45)
+        GroupBox.resize(250, 45)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(GroupBox.sizePolicy().hasHeightForWidth())
+        GroupBox.setSizePolicy(sizePolicy)
+        GroupBox.setMinimumSize(QtCore.QSize(0, 45))
+        GroupBox.setMaximumSize(QtCore.QSize(250, 45))
+        GroupBox.setBaseSize(QtCore.QSize(231, 45))
         GroupBox.setStyleSheet("#GroupBox{\n"
 "\n"
 "    border-style : none;\n"
@@ -47,16 +55,16 @@ class Ui_GroupBox(object):
 "")
         GroupBox.setTitle("")
         self.label = QtGui.QLabel(GroupBox)
-        self.label.setGeometry(QtCore.QRect(11, 10, 31, 30))
+        self.label.setGeometry(QtCore.QRect(11, 7, 31, 30))
         self.label.setObjectName("label")
         self.label_2 = QtGui.QLabel(GroupBox)
-        self.label_2.setGeometry(QtCore.QRect(105, 10, 41, 30))
+        self.label_2.setGeometry(QtCore.QRect(105, 7, 41, 30))
         self.label_2.setObjectName("label_2")
         self.label_3 = QtGui.QLabel(GroupBox)
-        self.label_3.setGeometry(QtCore.QRect(55, 10, 41, 30))
+        self.label_3.setGeometry(QtCore.QRect(55, 7, 41, 30))
         self.label_3.setObjectName("label_3")
         self.groupBox = QtGui.QGroupBox(GroupBox)
-        self.groupBox.setGeometry(QtCore.QRect(150, 7, 72, 36))
+        self.groupBox.setGeometry(QtCore.QRect(150, 4, 72, 36))
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.toolButton = QtGui.QToolButton(self.groupBox)

@@ -48,7 +48,6 @@
 
 #label_4,#label_5,#label_6 {
 
-	font-style : italic;
 	color : grey;
 	background : none
 
@@ -240,7 +239,7 @@ QWidget {
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>1353</x>
+      <x>1365</x>
       <y>219</y>
       <width>150</width>
       <height>31</height>
@@ -256,7 +255,7 @@ QWidget {
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>543</x>
+      <x>555</x>
       <y>219</y>
       <width>150</width>
       <height>31</height>
@@ -468,61 +467,18 @@ QWidget {
      </widget>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_6">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>250</y>
-      <width>256</width>
-      <height>441</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string/>
-    </property>
-    <widget class="QWidget" name="verticalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>231</width>
-       <height>411</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <property name="sizeConstraint">
-       <enum>QLayout::SetMinimumSize</enum>
-      </property>
-     </layout>
-    </widget>
-   </widget>
    <widget class="QGroupBox" name="groupBox_7">
     <property name="geometry">
      <rect>
       <x>1300</x>
       <y>250</y>
-      <width>256</width>
+      <width>285</width>
       <height>571</height>
      </rect>
     </property>
     <property name="title">
      <string/>
     </property>
-    <widget class="QWidget" name="verticalLayoutWidget_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>231</width>
-       <height>541</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_5">
-      <property name="sizeConstraint">
-       <enum>QLayout::SetMinimumSize</enum>
-      </property>
-     </layout>
-    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_8">
     <property name="geometry">
@@ -837,6 +793,19 @@ QWidget {
      </widget>
     </widget>
    </widget>
+   <widget class="QGroupBox" name="groupBox_6">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>250</y>
+      <width>280</width>
+      <height>350</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+   </widget>
    <zorder>frame_2</zorder>
    <zorder>frame</zorder>
    <zorder>frame_3</zorder>
@@ -849,10 +818,10 @@ QWidget {
    <zorder>b_charger_2</zorder>
    <zorder>b_charger_4</zorder>
    <zorder>groupBox_3</zorder>
-   <zorder>groupBox_6</zorder>
    <zorder>groupBox_7</zorder>
    <zorder>groupBox_8</zorder>
    <zorder>groupBox_9</zorder>
+   <zorder>groupBox_6</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

@@ -2,10 +2,7 @@
 
 # Form implementation generated from reading ui file 'bil.ui'
 #
-<<<<<<< HEAD
-# Created: Sat Jan 17 21:24:23 2015
-=======
->>>>>>> 3148ca616ec476058f8b35c9c3f6403aec7d42fd
+# Created: Thu Jan 22 13:55:02 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -16,6 +13,14 @@ class Ui_GroupBox(object):
     def setupUi(self, GroupBox):
         GroupBox.setObjectName("GroupBox")
         GroupBox.resize(231, 148)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(GroupBox.sizePolicy().hasHeightForWidth())
+        GroupBox.setSizePolicy(sizePolicy)
+        GroupBox.setMinimumSize(QtCore.QSize(231, 148))
+        GroupBox.setMaximumSize(QtCore.QSize(231, 148))
+        GroupBox.setBaseSize(QtCore.QSize(0, 148))
         GroupBox.setStyleSheet("#GroupBox{\n"
 "\n"
 "    border-style : none;    \n"

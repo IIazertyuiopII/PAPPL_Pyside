@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'entree_donnees.ui'
 #
-# Created: Sat Jan 17 21:24:24 2015
+# Created: Thu Jan 22 13:55:03 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -25,10 +25,7 @@ class Ui_MainWindow(object):
 "    border-bottom-width : 20px;\n"
 "    border-bottom-width : 20px;    \n"
 "    border-radius : 0px;\n"
-<<<<<<< HEAD
-=======
 "    background : #eee;\n"
->>>>>>> 9206368b0cf627d2b847ae27c662df067ed47a47
 "\n"
 "}\n"
 "\n"
@@ -50,7 +47,6 @@ class Ui_MainWindow(object):
 "\n"
 "#label_4,#label_5,#label_6 {\n"
 "\n"
-"    font-style : italic;\n"
 "    color : grey;\n"
 "    background : none\n"
 "\n"
@@ -166,11 +162,11 @@ class Ui_MainWindow(object):
         self.label_6.setGeometry(QtCore.QRect(840, 202, 160, 30))
         self.label_6.setObjectName("label_6")
         self.label_7 = QtGui.QLabel(self.centralwidget)
-        self.label_7.setGeometry(QtCore.QRect(1353, 219, 150, 31))
+        self.label_7.setGeometry(QtCore.QRect(1365, 219, 150, 31))
         self.label_7.setAlignment(QtCore.Qt.AlignCenter)
         self.label_7.setObjectName("label_7")
         self.label_3 = QtGui.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(543, 219, 150, 31))
+        self.label_3.setGeometry(QtCore.QRect(555, 219, 150, 31))
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.b_charger_2 = QtGui.QToolButton(self.centralwidget)
@@ -189,11 +185,9 @@ class Ui_MainWindow(object):
         self.groupBox.setObjectName("groupBox")
         self.label = QtGui.QLabel(self.groupBox)
         self.label.setGeometry(QtCore.QRect(40, 30, 131, 20))
-        self.label.setToolTip("")
         self.label.setObjectName("label")
         self.label_2 = QtGui.QLabel(self.groupBox)
         self.label_2.setGeometry(QtCore.QRect(40, 60, 131, 20))
-        self.label_2.setToolTip("")
         self.label_2.setObjectName("label_2")
         self.spinBox = QtGui.QSpinBox(self.groupBox)
         self.spinBox.setGeometry(QtCore.QRect(180, 30, 85, 24))
@@ -209,11 +203,6 @@ class Ui_MainWindow(object):
         self.spinBox_2.setObjectName("spinBox_2")
         self.label_8 = QtGui.QLabel(self.groupBox)
         self.label_8.setGeometry(QtCore.QRect(290, 40, 171, 20))
-<<<<<<< HEAD
-=======
-        self.label_8.setToolTip("")
-        self.label_8.setToolTipDuration(10)
->>>>>>> 9206368b0cf627d2b847ae27c662df067ed47a47
         self.label_8.setObjectName("label_8")
         self.spinBox_3 = QtGui.QSpinBox(self.groupBox)
         self.spinBox_3.setGeometry(QtCore.QRect(470, 40, 85, 24))
@@ -236,28 +225,10 @@ class Ui_MainWindow(object):
         self.b_sauver = QtGui.QToolButton(self.horizontalLayoutWidget)
         self.b_sauver.setObjectName("b_sauver")
         self.horizontalLayout.addWidget(self.b_sauver)
-        self.groupBox_6 = QtGui.QGroupBox(self.centralwidget)
-        self.groupBox_6.setGeometry(QtCore.QRect(490, 250, 256, 441))
-        self.groupBox_6.setTitle("")
-        self.groupBox_6.setObjectName("groupBox_6")
-        self.verticalLayoutWidget = QtGui.QWidget(self.groupBox_6)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 231, 411))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.verticalLayout_2 = QtGui.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout_2.setSizeConstraint(QtGui.QLayout.SetMinimumSize)
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.groupBox_7 = QtGui.QGroupBox(self.centralwidget)
-        self.groupBox_7.setGeometry(QtCore.QRect(1300, 250, 256, 571))
+        self.groupBox_7.setGeometry(QtCore.QRect(1300, 250, 285, 571))
         self.groupBox_7.setTitle("")
         self.groupBox_7.setObjectName("groupBox_7")
-        self.verticalLayoutWidget_4 = QtGui.QWidget(self.groupBox_7)
-        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(10, 10, 231, 541))
-        self.verticalLayoutWidget_4.setObjectName("verticalLayoutWidget_4")
-        self.verticalLayout_5 = QtGui.QVBoxLayout(self.verticalLayoutWidget_4)
-        self.verticalLayout_5.setSizeConstraint(QtGui.QLayout.SetMinimumSize)
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.groupBox_8 = QtGui.QGroupBox(self.centralwidget)
         self.groupBox_8.setGeometry(QtCore.QRect(20, 260, 331, 401))
         self.groupBox_8.setTitle("")
@@ -267,11 +238,9 @@ class Ui_MainWindow(object):
         self.groupBox_4.setObjectName("groupBox_4")
         self.label_10 = QtGui.QLabel(self.groupBox_4)
         self.label_10.setGeometry(QtCore.QRect(20, 40, 131, 20))
-        self.label_10.setToolTip("")
         self.label_10.setObjectName("label_10")
         self.label_9 = QtGui.QLabel(self.groupBox_4)
         self.label_9.setGeometry(QtCore.QRect(20, 150, 131, 20))
-        self.label_9.setToolTip("")
         self.label_9.setObjectName("label_9")
         self.lineEdit = QtGui.QLineEdit(self.groupBox_4)
         self.lineEdit.setGeometry(QtCore.QRect(100, 70, 113, 24))
@@ -288,11 +257,9 @@ class Ui_MainWindow(object):
         self.groupBox_5.setObjectName("groupBox_5")
         self.label_11 = QtGui.QLabel(self.groupBox_5)
         self.label_11.setGeometry(QtCore.QRect(20, 40, 131, 20))
-        self.label_11.setToolTip("")
         self.label_11.setObjectName("label_11")
         self.label_12 = QtGui.QLabel(self.groupBox_5)
         self.label_12.setGeometry(QtCore.QRect(20, 180, 131, 20))
-        self.label_12.setToolTip("")
         self.label_12.setObjectName("label_12")
         self.lineEdit_3 = QtGui.QLineEdit(self.groupBox_5)
         self.lineEdit_3.setGeometry(QtCore.QRect(100, 70, 113, 24))
@@ -305,7 +272,6 @@ class Ui_MainWindow(object):
         self.lineEdit_5.setObjectName("lineEdit_5")
         self.label_13 = QtGui.QLabel(self.groupBox_5)
         self.label_13.setGeometry(QtCore.QRect(20, 260, 131, 20))
-        self.label_13.setToolTip("")
         self.label_13.setObjectName("label_13")
         self.lineEdit_6 = QtGui.QLineEdit(self.groupBox_5)
         self.lineEdit_6.setGeometry(QtCore.QRect(100, 320, 113, 24))
@@ -336,11 +302,14 @@ class Ui_MainWindow(object):
         self.label_18.setObjectName("label_18")
         self.label_19 = QtGui.QLabel(self.groupBox_5)
         self.label_19.setGeometry(QtCore.QRect(20, 110, 131, 20))
-        self.label_19.setToolTip("")
         self.label_19.setObjectName("label_19")
         self.lineEdit_10 = QtGui.QLineEdit(self.groupBox_5)
         self.lineEdit_10.setGeometry(QtCore.QRect(100, 140, 113, 24))
         self.lineEdit_10.setObjectName("lineEdit_10")
+        self.groupBox_6 = QtGui.QGroupBox(self.centralwidget)
+        self.groupBox_6.setGeometry(QtCore.QRect(490, 250, 280, 350))
+        self.groupBox_6.setTitle("")
+        self.groupBox_6.setObjectName("groupBox_6")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1600, 34))
@@ -367,28 +336,33 @@ class Ui_MainWindow(object):
         self.b_charger_2.setText(QtGui.QApplication.translate("MainWindow", "Create", None, QtGui.QApplication.UnicodeUTF8))
         self.b_charger_4.setText(QtGui.QApplication.translate("MainWindow", "Create", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox.setTitle(QtGui.QApplication.translate("MainWindow", "Simulation parameters", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setToolTip(QtGui.QApplication.translate("MainWindow", "Number of step to be computed", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("MainWindow", "step number :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setToolTip(QtGui.QApplication.translate("MainWindow", "Register the Arena size (assumed to be a square) in mm", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("MainWindow", "Arena size :", None, QtGui.QApplication.UnicodeUTF8))
-<<<<<<< HEAD
         self.label_8.setToolTip(QtGui.QApplication.translate("MainWindow", "Calculate one frame every N computed iterations", None, QtGui.QApplication.UnicodeUTF8))
-=======
->>>>>>> 9206368b0cf627d2b847ae27c662df067ed47a47
         self.label_8.setText(QtGui.QApplication.translate("MainWindow", "One picture every :", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_2.setTitle(QtGui.QApplication.translate("MainWindow", "Actions", None, QtGui.QApplication.UnicodeUTF8))
         self.b_charger.setText(QtGui.QApplication.translate("MainWindow", "Load", None, QtGui.QApplication.UnicodeUTF8))
         self.b_sauver.setText(QtGui.QApplication.translate("MainWindow", "Save", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_4.setTitle(QtGui.QApplication.translate("MainWindow", "Produit A", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_10.setToolTip(QtGui.QApplication.translate("MainWindow", "Speed a which a product move in the arena (mm/s)", None, QtGui.QApplication.UnicodeUTF8))
         self.label_10.setText(QtGui.QApplication.translate("MainWindow", "Diffusivity :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_9.setToolTip(QtGui.QApplication.translate("MainWindow", "Speed at which the product is destroyed ( s^-1)", None, QtGui.QApplication.UnicodeUTF8))
         self.label_9.setText(QtGui.QApplication.translate("MainWindow", "Decay :", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_5.setTitle(QtGui.QApplication.translate("MainWindow", "Bille 1 :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_11.setToolTip(QtGui.QApplication.translate("MainWindow", "Register how many beads with that configuration will be created", None, QtGui.QApplication.UnicodeUTF8))
         self.label_11.setText(QtGui.QApplication.translate("MainWindow", "Count :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_12.setToolTip(QtGui.QApplication.translate("MainWindow", "Form A = A + A + B", None, QtGui.QApplication.UnicodeUTF8))
         self.label_12.setText(QtGui.QApplication.translate("MainWindow", "Equation :", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_13.setToolTip(QtGui.QApplication.translate("MainWindow", "Initial concentration at beads position", None, QtGui.QApplication.UnicodeUTF8))
         self.label_13.setText(QtGui.QApplication.translate("MainWindow", "Concentrations :", None, QtGui.QApplication.UnicodeUTF8))
         self.label_14.setText(QtGui.QApplication.translate("MainWindow", "A ->", None, QtGui.QApplication.UnicodeUTF8))
         self.label_15.setText(QtGui.QApplication.translate("MainWindow", "B ->", None, QtGui.QApplication.UnicodeUTF8))
         self.label_16.setText(QtGui.QApplication.translate("MainWindow", "C ->", None, QtGui.QApplication.UnicodeUTF8))
         self.label_17.setText(QtGui.QApplication.translate("MainWindow", "D ->", None, QtGui.QApplication.UnicodeUTF8))
         self.label_18.setText(QtGui.QApplication.translate("MainWindow", "E ->", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_19.setToolTip(QtGui.QApplication.translate("MainWindow", "Beads diameter (mm)", None, QtGui.QApplication.UnicodeUTF8))
         self.label_19.setText(QtGui.QApplication.translate("MainWindow", "Size :", None, QtGui.QApplication.UnicodeUTF8))
         self.actionCharger.setText(QtGui.QApplication.translate("MainWindow", "Charger", None, QtGui.QApplication.UnicodeUTF8))
         self.actionSauver.setText(QtGui.QApplication.translate("MainWindow", "Sauver", None, QtGui.QApplication.UnicodeUTF8))
