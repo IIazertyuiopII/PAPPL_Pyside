@@ -31,7 +31,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.initScrollAreas()
 
-
   def save(self):
 
     string, _  = QFileDialog().getSaveFileName(self, 'Save file', '')
@@ -135,8 +134,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     self.scrollarea_2.setViewportMargins(10,10,10,20)
 
   def majOptions(self):
+    #hgv
       self.conf.opt = beads.Option(self.spinBox.value(),self.spinBox_2.value(),self.spinBox_3.value())
-
 
   def addProduct(self):
       np = len(self.conf.produits)-1
@@ -149,6 +148,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
           tmp = ok(self,params=self.conf.produits[np].getDescription())
           tmp.modif.connect(self.modifyProduct)
+          tmp.delet.connect(self.deleteProduct)
           self.verticalLayout_2.insertWidget(0,tmp,stretch=1)
 
           self.lineEdit.setText("")
@@ -156,10 +156,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else :
           wrongInputAnimation(self.groupBox_4)
 
-
   def modifyProduct(self,k):
-
-
     for i in range(self.verticalLayout_2.count()):
 
       if(type(self.verticalLayout_2.itemAt(i))==QSpacerItem) :
@@ -176,21 +173,42 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             break
         break
 
+    self.label_3.setText(str(len(self.conf.produits)) + " Products")
+
+  def deleteProduct(self,num):
+    for i in range(self.verticalLayout_2.count()):
+
+      if(type(self.verticalLayout_2.itemAt(i))==QSpacerItem) :
+        continue
+      
+      if str(self.verticalLayout_2.itemAt(i).widget().num) == str(num) :
+        selectedItem = self.verticalLayout_2.takeAt(i).widget()
+        selectedItem.deleteLater()
+        for j in self.conf.produits:
+          if j.num == num :
+            self.conf.produits.pop(self.conf.produits.index(j))
+            break
+        break
+    self.label_3.setText(str(len(self.conf.produits)) + " Products")
+
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
     con = list(conc)
     con.extend([self.lineEdit_3.text(),self.lineEdit_4.text()])
     if(checkOneParamMissing(con)==False) :
 
-      self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
+      self.conf.billes.append(beads.Bille(self.lineEdit_10.text(),self.lineEdit_4.text(),self.lineEdit_3.text(),conc))
       nb = len(self.conf.billes)-1
       self.label_7.setText(str(nb+1) + " Beads")
 
 
       tmp = bil(self,params=self.conf.billes[nb].getDescription())
       tmp.deriv.connect(self.modifBille)
-      self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
+      tmp.copyP.connect(self.copyBille)
+      tmp.editP.connect(self.editBille)
 
+      self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
+      self.lineEdit_10.setText("")
       self.lineEdit_5.setText("")
       self.lineEdit_6.setText("")
       self.lineEdit_7.setText("")
@@ -206,13 +224,52 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       if(type(self.verticalLayout_2.itemAt(i))==QSpacerItem) :
         continue
 
-      if str(self.verticalLayout_5.itemAt(i).widget().num) == str(k) :
-        for j in self.conf.produits:
-          if j.num == k :
-            c = self.conf.produits.pop(self.conf.produits.index(j))
+      if str(self.verticalLayout_5.itemAt(i).widget().num) == str(num) :
+        for j in self.conf.billes:
+          if j.num == num :
+            c = self.conf.billes.pop(self.conf.billes.index(j))
             break
         selectedItem = self.verticalLayout_5.takeAt(i).widget()
-        self.lineEdit_3.setText(selectedItem.taille.text())
+        selectedItem.deleteLater()
+        break
+    self.label_7.setText(str(len(self.conf.billes)) + " Beads")
+
+
+  def copyBille(self,num):
+    for i in range(self.verticalLayout_5.count()):
+      if(type(self.verticalLayout_2.itemAt(i))==QSpacerItem) :
+        continue
+
+      if str(self.verticalLayout_5.itemAt(i).widget().num) == str(num) :
+        for j in self.conf.billes:
+          print(" j : %d ==> num : %d", j.num,num)
+          if str(j.num) == str(num) :
+            c = self.conf.billes[self.conf.billes.index(j)]
+            break
+        selectedItem = self.verticalLayout_5.itemAt(i).widget()
+        self.lineEdit_10.setText(selectedItem.taille.text())
+        self.lineEdit_3.setText(selectedItem.number.text())
+        self.lineEdit_4.setText(selectedItem.eq.text())
+        self.lineEdit_5.setText(c.conc[0])
+        self.lineEdit_6.setText(c.conc[1])
+        self.lineEdit_7.setText(c.conc[2])
+        self.lineEdit_8.setText(c.conc[3])
+        self.lineEdit_9.setText(c.conc[4])
+        break
+
+  def editBille(self,num):
+    for i in range(self.verticalLayout_5.count()):
+      if(type(self.verticalLayout_2.itemAt(i))==QSpacerItem) :
+        continue
+
+      if str(self.verticalLayout_5.itemAt(i).widget().num) == str(num) :
+        for j in self.conf.billes:
+          if str(j.num) == str(num) :
+            c = self.conf.billes.pop(self.conf.billes.index(j))
+            break
+        selectedItem = self.verticalLayout_5.takeAt(i).widget()
+        self.lineEdit_10.setText(selectedItem.taille.text())
+        self.lineEdit_3.setText(selectedItem.number.text())
         self.lineEdit_4.setText(selectedItem.eq.text())
         self.lineEdit_5.setText(c.conc[0])
         self.lineEdit_6.setText(c.conc[1])
@@ -221,9 +278,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_9.setText(c.conc[4])
         selectedItem.deleteLater()
         break
+    self.label_7.setText(str(len(self.conf.billes)) + " Beads")
+
 
   def modifyStylesheetGuiFromMainThread(self,widget,stylesheet) :
     self.findChild(QWidget,widget).setStyleSheet(stylesheet)
+    #dkfjg
 
 def mapAlphabet(k):
 
@@ -234,8 +294,6 @@ def mapAlphabet(k):
   else:
     return 'error'
 
-
-    
 def checkOneParamMissing(iterable):
   for i in iterable :
     if(i==""):
@@ -247,7 +305,6 @@ def wrongInputAnimation(widget):
   b = blink()
   b.info.connect(frame.modifyStylesheetGuiFromMainThread)
   threading.Thread(target=b.doblink, args=[widget,3], kwargs={}).start()
-
 
 class blink(QWidget):
 
@@ -261,13 +318,12 @@ class blink(QWidget):
       time.sleep(0.5)
       self.info.emit(widget.objectName(),"#"+widget.objectName()+" {border : none;} ")
       time.sleep(0.5)
-      self.doblink(widget,n-1)
-
-      
+      self.doblink(widget,n-1)    
     
 class ok(QGroupBox, Ui_GroupBox):
 
   modif = Signal(int)
+  delet = Signal(int)
 
   def __init__(self,parent,params):
     super(ok, self).__init__(parent)
@@ -276,27 +332,38 @@ class ok(QGroupBox, Ui_GroupBox):
     self.label.setText(mapAlphabet(params[0]))
     self.label_3.setText(params[1])
     self.label_2.setText(params[2])
-    self.toolButton.clicked.connect(self.c)
+    self.toolButton_2.clicked.connect(self.c)
+    self.toolButton.clicked.connect(self.d)
 
   def c(self):
     self.modif.emit(int(self.num))
-
+  def d(self): 
+    self.delet.emit(int(self.num))
 
 class bil(QGroupBox, Ui_bil):
 
   deriv = Signal(int)
+  copyP = Signal(int)
+  editP = Signal(int)
 
   def __init__(self,parent,params):
     super(bil, self).__init__(parent)
     self.setupUi(self)
     self.num = params[0]
+    self.number.setText(params[3])
     self.taille.setText(params[1])
     self.eq.setText(params[2])
-    self.conc.setText(params[3])
+    self.conc.setText(params[4])
     self.der.clicked.connect(self.c)
+    self.edit.clicked.connect(self.e)
+    self.copy.clicked.connect(self.d)
 
   def c(self):
     self.deriv.emit(int(self.num))
+  def d(self):
+    self.copyP.emit(int(self.num))
+  def e(self):
+    self.editP.emit(int(self.num))
 
 app = QApplication(sys.argv)
 frame = MainWindow()

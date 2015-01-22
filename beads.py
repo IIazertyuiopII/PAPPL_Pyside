@@ -21,13 +21,17 @@ class Produit:
 		Produit.nm.remove(self.num)
 
 class Bille:
-	id = 0 
-	def __init__(self,equation,size,conc):
+	#id = 0 
+	nm = []
+	def __init__(self,equation,size,count,conc):
 		self.eq = equation
 		self.size = size
 		self.conc = conc
-		self.num = Bille.id
-		Bille.id += 1
+		self.count = count
+		self.num = 0
+		while self.num in Produit.nm:
+			self.num += 1
+		Produit.nm.append(self.num)	
 	def parseur(self):
 		pass
 	def getEquation(self):
@@ -37,7 +41,7 @@ class Bille:
 	def __str__(self):
 		return "Bille " + str(self.num) + " Size : " + str(self.size) + "\nEq : " + self.eq + "\nConc : " + str(self.conc)
 	def getDescription(self):
-		return [str(self.num),str(self.size),str(self.eq),str(self.conc)]
+		return [str(self.num),str(self.size),str(self.eq),str(self.count),str(self.conc)]
 
 
 class Option:
