@@ -143,10 +143,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
       if(np<=5) :
         conc = [self.lineEdit.text(),self.lineEdit_2.text()]
         if(checkOneParamMissing(conc)==False) :
-          self.conf.produits.append(beads.Produit(conc))
-          self.label_3.setText(str(np+1) + " Products")
+          tmp = beads.Produit(conc)
+          print(tmp)
+          self.conf.produits.append(tmp)
+          self.label_3.setText(str(np+2) + " Products")
 
-          tmp = ok(self,params=self.conf.produits[np].getDescription())
+          tmp = ok(self,params=tmp.getDescription())
           tmp.modif.connect(self.modifyProduct)
           tmp.delet.connect(self.deleteProduct)
           self.verticalLayout_2.insertWidget(0,tmp,stretch=1)
@@ -234,7 +236,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         break
     self.label_7.setText(str(len(self.conf.billes)) + " Beads")
 
-
   def copyBille(self,num):
     for i in range(self.verticalLayout_5.count()):
       if(type(self.verticalLayout_2.itemAt(i))==QSpacerItem) :
@@ -279,7 +280,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         selectedItem.deleteLater()
         break
     self.label_7.setText(str(len(self.conf.billes)) + " Beads")
-
 
   def modifyStylesheetGuiFromMainThread(self,widget,stylesheet) :
     self.findChild(QWidget,widget).setStyleSheet(stylesheet)
@@ -329,6 +329,7 @@ class ok(QGroupBox, Ui_GroupBox):
     super(ok, self).__init__(parent)
     self.setupUi(self)
     self.num = params[0]
+    print(self.num)
     self.label.setText(mapAlphabet(params[0]))
     self.label_3.setText(params[1])
     self.label_2.setText(params[2])

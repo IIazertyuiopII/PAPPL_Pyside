@@ -11,7 +11,6 @@ class Produit:
 		while self.num in Produit.nm:
 			self.num += 1
 		Produit.nm.append(self.num)
-		print(self.num)
 	def getDescription(self):
 		return [str(self.num),str(self.diffusivity),str(self.decay)]
 	def __str__(self):
