@@ -2,9 +2,6 @@
 
 # Form implementation generated from reading ui file 'bil.ui'
 #
-# Created: Thu Jan 22 22:12:41 2015
-#      by: pyside-uic 0.2.13 running on PySide 1.2.2
-#
 # WARNING! All changes made in this file will be lost!
 
 from PySide import QtCore, QtGui
