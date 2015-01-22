@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'bil.ui'
 #
-# Created: Thu Jan 22 19:55:32 2015
+# Created: Thu Jan 22 19:57:27 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
