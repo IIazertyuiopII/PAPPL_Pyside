@@ -104,7 +104,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     for i in self.conf.billes:
       tmp = bil(self,params=i.getDescription())
-      tmp.modif.connect(self.modifBille)
+      tmp.editP.connect(self.modifBille)
       self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
 
     np = len(self.conf.billes)
