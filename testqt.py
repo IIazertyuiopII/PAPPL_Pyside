@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-
+import time
 import sys
 sys.path.append(".")
 import beads
-
+import threading
 import PySide
 from PySide.QtGui import *
 from PySide.QtCore import *
@@ -137,18 +137,24 @@ class MainWindow(QMainWindow, Ui_MainWindow):
   def majOptions(self):
       self.conf.opt = beads.Option(self.spinBox.value(),self.spinBox_2.value(),self.spinBox_3.value())
 
+
   def addProduct(self):
-      self.conf.produits.append(beads.Produit(self.lineEdit.text(),self.lineEdit_2.text()))
       np = len(self.conf.produits)-1
+
       if(np<=5) :
-        self.label_3.setText(str(np+1) + " Products")
+        conc = [self.lineEdit.text(),self.lineEdit_2.text()]
+        if(checkOneParamMissing(conc)==False) :
+          self.conf.produits.append(beads.Produit(conc))
+          self.label_3.setText(str(np+1) + " Products")
 
-        tmp = ok(self,params=self.conf.produits[np].getDescription())
-        tmp.modif.connect(self.modifyProduct)
-        self.verticalLayout_2.insertWidget(0,tmp,stretch=1)
+          tmp = ok(self,params=self.conf.produits[np].getDescription())
+          tmp.modif.connect(self.modifyProduct)
+          self.verticalLayout_2.insertWidget(0,tmp,stretch=1)
 
-        self.lineEdit.setText("")
-        self.lineEdit_2.setText("")
+          self.lineEdit.setText("")
+          self.lineEdit_2.setText("")
+        else :
+          wrongInputAnimation(self.groupBox_4)
 
 
   def modifyProduct(self,k):
@@ -172,22 +178,28 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
   def addBille(self):
     conc = [self.lineEdit_5.text(),self.lineEdit_6.text(),self.lineEdit_7.text(),self.lineEdit_8.text(),self.lineEdit_9.text()]
-    self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
-    nb = len(self.conf.billes)-1
-    self.label_7.setText(str(nb+1) + " Beads")
+    con = list(conc)
+    con.extend([self.lineEdit_3.text(),self.lineEdit_4.text()])
+    if(checkOneParamMissing(con)==False) :
+
+      self.conf.billes.append(beads.Bille(self.lineEdit_3.text(),self.lineEdit_4.text(),conc))
+      nb = len(self.conf.billes)-1
+      self.label_7.setText(str(nb+1) + " Beads")
 
 
-    tmp = bil(self,params=self.conf.billes[nb].getDescription())
-    tmp.deriv.connect(self.modifBille)
-    self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
+      tmp = bil(self,params=self.conf.billes[nb].getDescription())
+      tmp.deriv.connect(self.modifBille)
+      self.verticalLayout_5.insertWidget(0,tmp,stretch=1)
 
-    self.lineEdit_5.setText("")
-    self.lineEdit_6.setText("")
-    self.lineEdit_7.setText("")
-    self.lineEdit_8.setText("")
-    self.lineEdit_9.setText("")
-    self.lineEdit_3.setText("")
-    self.lineEdit_4.setText("")
+      self.lineEdit_5.setText("")
+      self.lineEdit_6.setText("")
+      self.lineEdit_7.setText("")
+      self.lineEdit_8.setText("")
+      self.lineEdit_9.setText("")
+      self.lineEdit_3.setText("")
+      self.lineEdit_4.setText("")
+    else :
+      wrongInputAnimation(self.groupBox_5)
 
   def modifBille(self,num):
     for i in range(self.verticalLayout_5.count()):
@@ -210,6 +222,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         selectedItem.deleteLater()
         break
 
+  def modifyStylesheetGuiFromMainThread(self,widget,stylesheet) :
+    self.findChild(QWidget,widget).setStyleSheet(stylesheet)
+
 def mapAlphabet(k):
 
   k = int(k)
@@ -220,7 +235,36 @@ def mapAlphabet(k):
     return 'error'
 
 
+    
+def checkOneParamMissing(iterable):
+  for i in iterable :
+    if(i==""):
+      return True
+  return False
 
+def wrongInputAnimation(widget):
+  
+  b = blink()
+  b.info.connect(frame.modifyStylesheetGuiFromMainThread)
+  threading.Thread(target=b.doblink, args=[widget,3], kwargs={}).start()
+
+
+class blink(QWidget):
+
+  info = Signal(str,str)
+
+  def doblink(self,widget,n) :
+    if n==0 :
+      return
+    else :
+      self.info.emit(widget.objectName(),"#"+widget.objectName()+" {border : 1px solid red;} ")
+      time.sleep(0.5)
+      self.info.emit(widget.objectName(),"#"+widget.objectName()+" {border : none;} ")
+      time.sleep(0.5)
+      self.doblink(widget,n-1)
+
+      
+    
 class ok(QGroupBox, Ui_GroupBox):
 
   modif = Signal(int)
@@ -258,4 +302,3 @@ app = QApplication(sys.argv)
 frame = MainWindow()
 frame.show()
 app.exec_()
-    

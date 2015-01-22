@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'entree_donnees.ui'
 #
-# Created: Thu Jan 22 13:55:03 2015
+# Created: Thu Jan 22 15:47:06 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -235,6 +235,8 @@ class Ui_MainWindow(object):
         self.groupBox_8.setObjectName("groupBox_8")
         self.groupBox_4 = QtGui.QGroupBox(self.groupBox_8)
         self.groupBox_4.setGeometry(QtCore.QRect(35, 50, 260, 300))
+        self.groupBox_4.setAutoFillBackground(False)
+        self.groupBox_4.setStyleSheet("")
         self.groupBox_4.setObjectName("groupBox_4")
         self.label_10 = QtGui.QLabel(self.groupBox_4)
         self.label_10.setGeometry(QtCore.QRect(20, 40, 131, 20))
@@ -331,8 +333,8 @@ class Ui_MainWindow(object):
         self.label_4.setText(QtGui.QApplication.translate("MainWindow", "Products", None, QtGui.QApplication.UnicodeUTF8))
         self.label_5.setText(QtGui.QApplication.translate("MainWindow", "Global parameters", None, QtGui.QApplication.UnicodeUTF8))
         self.label_6.setText(QtGui.QApplication.translate("MainWindow", "Beads", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_7.setText(QtGui.QApplication.translate("MainWindow", "145 billes", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_3.setText(QtGui.QApplication.translate("MainWindow", "1655 Produits", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_7.setText(QtGui.QApplication.translate("MainWindow", "0 billes", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_3.setText(QtGui.QApplication.translate("MainWindow", "0 Produits", None, QtGui.QApplication.UnicodeUTF8))
         self.b_charger_2.setText(QtGui.QApplication.translate("MainWindow", "Create", None, QtGui.QApplication.UnicodeUTF8))
         self.b_charger_4.setText(QtGui.QApplication.translate("MainWindow", "Create", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox.setTitle(QtGui.QApplication.translate("MainWindow", "Simulation parameters", None, QtGui.QApplication.UnicodeUTF8))

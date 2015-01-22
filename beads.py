@@ -4,10 +4,10 @@ import copy
 
 class Produit:
 	id = 0
-	def __init__(self,diffu, deay):
+	def __init__(self,conc):
 		self.num = Produit.id
-		self.diffusivity = diffu
-		self.decay = deay
+		self.diffusivity = conc[0]
+		self.decay = conc[1]
 		Produit.id += 1
 	def getDescription(self):
 		return [str(self.num),str(self.diffusivity),str(self.decay)]

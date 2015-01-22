@@ -246,7 +246,7 @@ QWidget {
      </rect>
     </property>
     <property name="text">
-     <string>145 billes</string>
+     <string>0 billes</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -262,7 +262,7 @@ QWidget {
      </rect>
     </property>
     <property name="text">
-     <string>1655 Produits</string>
+     <string>0 Produits</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -500,6 +500,12 @@ QWidget {
        <width>260</width>
        <height>300</height>
       </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="title">
       <string>Produit A</string>
