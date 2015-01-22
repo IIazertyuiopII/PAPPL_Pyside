@@ -40,7 +40,7 @@ class Bille:
 	def __str__(self):
 		return "Bille " + str(self.num) + " Size : " + str(self.size) + "\nEq : " + self.eq + "\nConc : " + str(self.conc)
 	def getDescription(self):
-		return [str(self.num),str(self.size),str(self.eq),str(self.count),str(self.conc)]
+		return [str(self.num),str(self.eq),str(self.size),str(self.count),str(self.conc)]
 
 
 class Option:
